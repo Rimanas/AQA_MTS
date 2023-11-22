@@ -12,7 +12,9 @@ namespace FerstApp
                  1 comment
                  2 comment
                  */
-                /*
+                //  =================================        Урок 6   14.11.2023   ==========
+                  
+                /*    ======   1 part
                 Console.WriteLine("Hello, World!");
                 Console.WriteLine("Hi!");
                 const int MINUTES_IN_HOUR = 60;
@@ -33,40 +35,39 @@ namespace FerstApp
                 Console.WriteLine(1.24);
                 Console.WriteLine(1.24F);
 
+                Console.WriteLine('H');
+
+                Console.WriteLine("It is a \t nice day!");
+                Console.WriteLine("It is a \n nice day!");
+                Console.WriteLine("It is a '\' nice day!");
+
                 float a = 3.14F;
                 float a1 = 3.14F;
 
                 decimal c = 2.4M;
 
+
                 Console.WriteLine(c);
 
                 var d = 2000;
+                var d1 = 3.14F;
+                var d2 = 'D';
+
                 Console.WriteLine(d);
 
                 var message = "Hello";
-
                 Console.WriteLine(message);
-                */
-
-                /*
+               
                 Console.WriteLine("Добро пожаловать!");
                 Console.Write("Надеюсь Вы");
                 Console.Write("постигните Си Шарп");
                 Console.WriteLine("Все будет Гуд");
                 */
 
-                //Task
-                //Create data
 
-                /*
-                bool isWhiteBreadFresh = true;
-                ushort whiteBreadPrice = 150;
-                ushort butterPrice = 230;
-                ushort milkPrice = 170;
-                float milkPercentage = 1.2F;
-                */
-
-                /*
+               /*   =========   2 part
+               
+                
                 int j;
                 j = 20;
 
@@ -76,15 +77,35 @@ namespace FerstApp
                 int age = 34;
                 double height = 1.7;
 
-                // Этот метод удобнее
+                // Этот метод удобнее   вывода сообщения на экран
                 Console.WriteLine($"Имя: {name} Возрст: {age} Рост: {height}");
-
                 Console.WriteLine("Имя: {0} Возрст: {2} Рост: {1}", name, height, age);
-                */
+
+                Console.WriteLine("Inter your name:");
+                string? name1 = Console.ReadLine();   
+                Console.WriteLine($"Your name: {name1}");
+
+                Console.WriteLine("Inter your age");
+                string? age_str = Console.ReadLine();
+                int age1 = Convert.ToInt32(age_str);    
+                Console.WriteLine($"Your age: {age1}");
 
 
 
-                /*   Урок 16/11/2023
+                //Task
+                //Create data
+
+
+                bool isWhiteBreadFresh = true;
+                ushort whiteBreadPrice = 150;
+                ushort butterPrice = 230;
+                ushort milkPrice = 170;
+                float milkPercentage = 1.2F;
+               */
+
+
+
+                /*   ==============================================Урок 16/11/2023
                 Console.WriteLine("Write your name");
                 string? name = Console.ReadLine();  //здесь знак вопроса позволяет ничего не записывать в поле. и будет иметь значение nullв таком случае
                 Console.WriteLine($"Your name: {name}");
@@ -160,14 +181,14 @@ namespace FerstApp
                 };
                 */
 
-                //  =================================Урок 18/11/2023
+                /*  =============================================Урок 18/11/2023
 
                 // ==================================================Массивы
 
 
                 // int[] array = { 1, 9, 3, 6, 5 };    //  array - это имя
 
-                /*
+                
                 int[] array1;
                 int n = 4;
                 array1 = new int[n];    
@@ -208,12 +229,12 @@ namespace FerstApp
                     Console.Write($"{array[i]}");
                 }
 
-                */
+                
 
                 //  третий вариант. Нужно пройти по всем элементам массива. Одномерный - здесь
 
 
-                /*
+                
                 int[] array = { 1, 9, 3, 6, 5 };
 
 
@@ -232,12 +253,12 @@ namespace FerstApp
 
                 Console.WriteLine();
 
-                */
+                
 
 
 
 
-                /*
+               
 
                 // 10 раз вывести слово HELLO
                 for (int i=1; i<=10; i++)
@@ -265,7 +286,7 @@ namespace FerstApp
                     Console.WriteLine(ch);
 
 
-                */
+                
 
                 /*
                 //   ============   ERROR/ так делать не получится=======
@@ -274,13 +295,15 @@ namespace FerstApp
                 {
                     item = new Random().Next(10);
                 }
-                */
+                
 
+
+               
                 //Внутри циклов есть 2 операции , которые добавляют логику в них
                 // 1. Вывести толко четные 
                 // 2. Не выводить число 6
 
-                /*
+                
                 for (int i=0; i<=10;i+=2)
                 {
                     if (i != 6)
@@ -305,7 +328,7 @@ namespace FerstApp
                     Console.Write($"{i}");
                 }
 
-                */
+                
 
                 Console.WriteLine();
 
@@ -313,7 +336,7 @@ namespace FerstApp
                 // но здесь нет увеличения или уменьшения какой-то переменной
                 //здесь только условие какое-то
 
-                /*
+                
                 int u = 6;
                 bool flag = true;
                 do
@@ -383,9 +406,9 @@ namespace FerstApp
                 */
 
 
-                /////  ============     УРОК 9     21.11.2023   =========
+                /////  ============ ===================================    УРОК 9     21.11.2023   =========
 
-                ////   ====    Трехмерны массив  =====
+                ////   ====    Трехмерный массив  =====
 
 
                 /*

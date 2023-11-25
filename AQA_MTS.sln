@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypesAndOperators", "TypesA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringApp", "StringApp\StringApp.csproj", "{60D4C80E-4493-4F2A-AB4E-8099DDDC437C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringNewApp", "StringNewApp\StringNewApp.csproj", "{AE644269-6808-4C05-BABB-352678F3C980}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{60D4C80E-4493-4F2A-AB4E-8099DDDC437C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60D4C80E-4493-4F2A-AB4E-8099DDDC437C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60D4C80E-4493-4F2A-AB4E-8099DDDC437C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE644269-6808-4C05-BABB-352678F3C980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE644269-6808-4C05-BABB-352678F3C980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE644269-6808-4C05-BABB-352678F3C980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE644269-6808-4C05-BABB-352678F3C980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

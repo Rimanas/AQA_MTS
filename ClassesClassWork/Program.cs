@@ -203,6 +203,9 @@ namespace Classes
 
             // -=================== This
             PersonThis personThis = new PersonThis("Alex", 45);
+
+           // NamespaceA.ClassA
+
         }
     }
 }

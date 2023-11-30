@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
-using Classes.Models;
+using ClassesClassWork.Models;
 
-namespace Classes
+namespace ClassesClassWork
 {
     class Program
     {
         static void Main(string[] args)
         {
+            /*
             int[] array = { 1, 8, 14, -4, 0, 7 };
 
             foreach (var item in array)
@@ -205,7 +206,36 @@ namespace Classes
             PersonThis personThis = new PersonThis("Alex", 45);
 
            // NamespaceA.ClassA
+            */
 
+            // ===========  Классная практика ====
+            //  ========   Задача 1 ====
+
+            Student[] student = new Students[14];
+
+            for (int i = 0; i < 14; i++)
+            {
+                students[i] = new Student();
+                students[i].name = "Alex" + i;
+                students[i].group = new Random().Next(2);
+                students[i].diplomMark = new Random().Next(1, 11);
+
+            }
+            Console.WriteLine($"Stidents.Lenght: {students.Lenght}");
+
+            //==========Задача 2=======
+
+            //==========Задача 3====
+
+            //==========Задача 3====
+            Cat cat = new Cat();
+            cat.name = "";
+            cat.age = 2;
+            cat.maxFoodCount = 3;
+
+            Console.WriteLine($"Наелся? - {cat.Feed(2)}");
+            Console.WriteLine($"Наелся? - {cat.Feed(4)}");
+            Console.WriteLine($"Наелся? - {0}, cat.Feed(3) ? lf");
         }
     }
 }

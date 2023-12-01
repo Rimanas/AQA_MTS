@@ -1,4 +1,7 @@
-﻿namespace ArraysHomeWork
+﻿using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace ArraysHomeWork
 {
     class Programm
     {
@@ -9,17 +12,18 @@
             Console.WriteLine("1 ЗАДАНИЕ. Проверка принадлежности числа массиву целых чисел");
             Console.WriteLine();
             Console.WriteLine("Есть массив целых чисел");
-         
+
             int number;
             int j;
             Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
             j = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш массив");
             int[] array = new int[j];
 
-            
+
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = new Random().Next(0,1000);
+                array[i] = new Random().Next(0, 1000);
             }
             for (int i = 0; i < array.Length; i++)
                 Console.WriteLine(array[i] + "");
@@ -37,8 +41,8 @@
             Console.WriteLine();
 
             //======= 2 ЗАДАНИЕ. Удаление всех вхождений заданного числа из массива. Создание нового массива ===========
-            
-            Console.WriteLine("1 ЗАДАНИЕ. Удаление всех вхождений заданного числа из массива. Создание нового массива");
+
+            Console.WriteLine("2 ЗАДАНИЕ. Удаление всех вхождений заданного числа из массива. Создание нового массива");
             Console.WriteLine();
             Console.WriteLine("Есть массив целых чисел");
 
@@ -46,6 +50,7 @@
             int j1;
             Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
             j1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш массив");
             int[] array1 = new int[j1];
 
 
@@ -64,7 +69,7 @@
             {
                 array1 = array1.Where(e => e != number1).ToArray();
                 Console.WriteLine("Новый массив");
-                Console.WriteLine(String.Join(",", array1));
+                Console.WriteLine(string.Join(",", array1));
             }
             else
             {
@@ -72,6 +77,111 @@
             }
             Console.WriteLine();
 
+            //======= 3 ЗАДАНИЕ. Нахождение  max, min, avg значений рандомного массива чисел  ===========
+
+            Console.WriteLine("3 ЗАДАНИЕ. Нахождение  max, min, avg значений рандомного массива чисел");
+            Console.WriteLine();
+            Console.WriteLine("Создайте массив случайных чисел от 10 до 50");
+
+            int size;
+            Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
+            size = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш массив");
+            int[] array2 = new int[size];
+            for (int k = 0; k < array2.Length; k++)
+            {
+                array2[k] = new Random().Next(10, 50);
+            }
+            for (int k = 0; k < array2.Length; k++)
+
+                Console.WriteLine(array2[k] + "");
+            //Array.Sort(array2);
+
+            // Ручная сортировка
+            int temp;
+            for (int k = 0; k < array2.Length - 1; k++)
+            {
+                for (int n = k + 1; n < array2.Length; n++)
+                {
+                    if (array2[k] > array2[n])
+                    {
+                        temp = array2[k];
+                        array2[k] = array2[n];
+                        array2[n] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Вывод отсортированного массива");
+            for (int k = 0; k < array2.Length; k++)
+            {
+                Console.WriteLine(array2[k]);
+            }
+
+            int avg = array2.Length / 2;
+            Console.WriteLine(avg);
+
+            // foreach (var element in array2)
+            //     Console.Write($"{element} ");
+            Console.WriteLine();
+            Console.WriteLine($"Минимальный элемент массива: {array2[0]}");
+            Console.WriteLine($"Максимальный элемент массива:{array2[array2.GetUpperBound(0)]}");
+
+            // -------ПЕРЕДЕЛАТЬ - СРЕДНИЙ ЭЛЕМЕНТ   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            Console.WriteLine($"Средний элемент массива:{array2[avg]}");
+
+            //======= 4 ЗАДАНИЕ. Сравнение среднего арифмитического двух массивов  ===========
+
+            Console.WriteLine("4 ЗАДАНИЕ. Сравнение среднего арифмитического двух массивов");
+            Console.WriteLine();
+            int[] arr1 = new int[5];
+            for (int y = 0; y < 5; y++)
+            {
+                arr1[y] = new Random().Next(0, 10);
+            }
+            int[] arr2 = new int[5];
+            for (int y = 0; y < 5; y++)
+            {
+                arr2[y] = new Random().Next(0, 10);
+            }
+
+            int summ1 = 0;
+            int summ2 = 0;
+
+            Console.WriteLine("Первый массив : ");
+            var s1 = string.Join(" ", arr1);
+            Console.WriteLine(s1);
+            Console.WriteLine();
+            Console.WriteLine("Второй массив : ");
+            var s2 = string.Join(" ", arr2);
+            Console.WriteLine(s2);
+            Console.WriteLine();
+
+            Console.WriteLine("Среднее арифмитическое Первого массива : ");
+            for (int i = 0; i < arr1.Length; i++)
+                summ1 += arr1[i];
+            int avg1 = summ1 / arr1.Length;
+            Console.WriteLine(avg1);
+
+            Console.WriteLine();
+            Console.WriteLine("Среднее арифмитическое Второго массива : ");
+            for (int i = 0; i < arr2.Length; i++)
+                summ2 += arr2[i];
+            int avg2 = summ2 / arr2.Length;
+            Console.WriteLine(avg2);
+            if (avg1 > avg2)
+            {
+                Console.WriteLine("Среднее арифметическое 1 массива больше, чем 2 массива");
+            }
+            else if (avg2 > avg1)
+            {
+                Console.WriteLine("Среднее арифметическое 2 массива больше, чем 1 массива");
+            }
+            else {
+                Console.WriteLine("Среднее арифметическое двух массивов равно");
+
+            }
+
         }
-    }
+        }
 }

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstraction", "Abstraction\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encapsuiation", "Encapsuiation\Encapsuiation.csproj", "{FC4434F5-0204-458E-9B09-3F753722CE07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{01607FA5-7579-47C2-8AF4-BA883D59BBBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{FC4434F5-0204-458E-9B09-3F753722CE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4434F5-0204-458E-9B09-3F753722CE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4434F5-0204-458E-9B09-3F753722CE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

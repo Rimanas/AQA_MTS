@@ -18,3 +18,7 @@ Console.Out.WriteLine(client1.PhoneNumber);
 
 Console.Out.WriteLine(client2.Id);
 Console.Out.WriteLine(client2.PhoneNumber);
+
+State state = new State();
+//переменная publicVar общедоступная
+Console.WriteLine(publicVar);

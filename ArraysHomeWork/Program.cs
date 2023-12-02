@@ -119,16 +119,22 @@ namespace ArraysHomeWork
 
             int avg = array2.Length / 2;
             Console.WriteLine(avg);
-
-            // foreach (var element in array2)
-            //     Console.Write($"{element} ");
             Console.WriteLine();
             Console.WriteLine($"Минимальный элемент массива: {array2[0]}");
             Console.WriteLine($"Максимальный элемент массива:{array2[array2.GetUpperBound(0)]}");
 
-            // -------ПЕРЕДЕЛАТЬ - СРЕДНИЙ ЭЛЕМЕНТ   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if (size % 2 == 1)
+            {
+                Console.WriteLine($"Средний элемент ОТСОРТИРОВАННОГО массива:{array2[avg]}");
 
-            Console.WriteLine($"Средний элемент массива:{array2[avg]}");
+            }
+            else
+            {
+                Console.WriteLine("Средние элементы ОТСОРТИРОВАННОГО массива:");
+                Console.WriteLine(array2[avg-1]);
+                Console.WriteLine(array2[avg]);
+            }
+            Console.WriteLine();
 
             //======= 4 ЗАДАНИЕ. Сравнение среднего арифмитического двух массивов  ===========
 
@@ -178,7 +184,7 @@ namespace ArraysHomeWork
                 Console.WriteLine("Среднее арифметическое 2 массива больше, чем 1 массива");
             }
             else {
-                Console.WriteLine("Среднее арифметическое двух массивов равно");
+                Console.WriteLine("Среднее арифметическое двух массивов равно!");
 
             }
 

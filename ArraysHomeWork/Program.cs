@@ -197,39 +197,89 @@ namespace ArraysHomeWork
             Console.WriteLine("Создайте массив из случайных чисел");
 
             int sizeArr;
+            int newSizeArr = 0;
+            int even = 0;
             int numb1 = 5;
             int numb2 = 10;
-            //Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
-            //sizeArr = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
+            sizeArr = Convert.ToInt32(Console.ReadLine());
+             
             //Условие, удовлетворяющее размерности массива 
             do
             {
+
+
+                if (sizeArr > numb1 && sizeArr <= numb2)
+                {
+                    Console.WriteLine("Ваш массив");
+                    int[] array5 = new int[sizeArr];
+                    for (int i = 0; i < array5.Length; i++)
+                    {
+                        array5[i] = new Random().Next(0, 50);
+                    }
+                    for (int i = 0; i < array5.Length; i++)
+
+                        Console.WriteLine(array5[i] + "");
+
+
+                    Console.WriteLine("Массив из четных элементов массива:");
+
+                    for (int i = 0; i < array5.Length; i++)
+                    {
+                        if (array5[i] % 2 == 0)
+                        {
+                            newSizeArr++;
+
+                        }
+                    }
+                    int[] newArray5 = new int[newSizeArr];
+                    for (int i = 0, x = 0; i < array5.Length; i++)
+                    {
+                        if (array5[i] % 2 == 0)
+                        {
+                            newArray5[x++] = array5[i];
+                        }
+                    }
+                    Console.WriteLine(string.Join(",", newArray5));
+
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Размер массива должен быть больше 5 и меньше или равно 10");
+                }
                 Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
-                Console.WriteLine("Размер массива должен быть больше 5 и меньше или равно 10");
                 sizeArr = Convert.ToInt32(Console.ReadLine());
             }
-            while(sizeArr > numb1 && sizeArr <= numb2 );
+            while (true);
 
-            /*
-            if (sizeArr > numb1 && sizeArr <= numb2)
-            {
-                Console.WriteLine("Ваш массив");
-                int[] array5 = new int[sizeArr];
-                for (int i = 0; i < array5.Length; i++)
-                {
-                    array5[i] = new Random().Next(0, 50);
-                }
-                for (int i = 0; i < array5.Length; i++)
+            //======= 7 ЗАДАНИЕ. Создание массива произвольных имен людей. Сортировка ===========
 
-                    Console.WriteLine(array5[i] + ""); 
-            }
-            else
+            Console.WriteLine("7 ЗАДАНИЕ. Создание массива произвольных имен людей. Сортировка ");
+            Console.WriteLine();
+            Console.WriteLine("Массив из случайных имен");
+            string[] people = { "Alan", "Samanta", "Daril", "Tommy", "Kate", "Bob" };
+            foreach (string str in people)
             {
-                Console.WriteLine("Размер массива должен быть больше 5 и меньше или равно 10");
+                Console.Write(str + " ");
             }
-            */
+            Console.WriteLine();
+            // Сортировка массива имен 
+            Console.WriteLine("Отсортированный массив имен");
+            Array.Sort(people);
+
+            foreach (string sortPeople in people)
+            {
+                Console.Write(sortPeople + " ");
+            }
 
         }
-        }
+
+
+        
+
+
+
+    }
+        
 }

@@ -188,6 +188,48 @@ namespace ArraysHomeWork
 
             }
 
+
+
+            //======= 5 ЗАДАНИЕ. Создание массива из случайных чисел. Создание массива только из четных элементв  ===========
+
+            Console.WriteLine("5 ЗАДАНИЕ. Создание массива из случайных чисел. Создание массива только из четных элементв");
+            Console.WriteLine();
+            Console.WriteLine("Создайте массив из случайных чисел");
+
+            int sizeArr;
+            int numb1 = 5;
+            int numb2 = 10;
+            //Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
+            //sizeArr = Convert.ToInt32(Console.ReadLine());
+
+            //Условие, удовлетворяющее размерности массива 
+            do
+            {
+                Console.WriteLine("Задайте размер массива, затем нажмите Enter:");
+                Console.WriteLine("Размер массива должен быть больше 5 и меньше или равно 10");
+                sizeArr = Convert.ToInt32(Console.ReadLine());
+            }
+            while(sizeArr > numb1 && sizeArr <= numb2 );
+
+            /*
+            if (sizeArr > numb1 && sizeArr <= numb2)
+            {
+                Console.WriteLine("Ваш массив");
+                int[] array5 = new int[sizeArr];
+                for (int i = 0; i < array5.Length; i++)
+                {
+                    array5[i] = new Random().Next(0, 50);
+                }
+                for (int i = 0; i < array5.Length; i++)
+
+                    Console.WriteLine(array5[i] + ""); 
+            }
+            else
+            {
+                Console.WriteLine("Размер массива должен быть больше 5 и меньше или равно 10");
+            }
+            */
+
         }
         }
 }

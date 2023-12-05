@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace StringHomeWork
@@ -27,10 +28,17 @@ namespace StringHomeWork
             Console.WriteLine(withoutNumText);
 
             // 2 способ . Исходный текст прочитан из файла
-            FileStream f = new FileStream("TextFile.txt", FileMode.Open, FileAccess.Read);
-            string path = "MyDir\\TextFile.txt";
+            Console.WriteLine() ;
+            Console.WriteLine("Второй способ");
+            string path = @"C:\\Users\\Alina\\Documents\\work\\AQA_MTS\\StringHomeWork\\TextFile.txt";
             string textFromFile = File.ReadAllText(path);
+            Console.WriteLine("Текст из файла");
             Console.WriteLine(textFromFile);
+            textFromFile = textFromFile.ToLower();
+            string replaceTextFromFile = textFromFile.Replace("test", "testing");
+            Console.WriteLine("Имененный текст:");
+            string changeText = Regex.Replace(replaceTextFromFile, "[0-9]", "");
+            Console.WriteLine(changeText);
 
             // ===== 2 ЗАДАНИЕ. Вывод текста в консоль. Конкатинация  ======
             Console.WriteLine();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace StringHomeWork
@@ -8,6 +9,8 @@ namespace StringHomeWork
         static void Main(string[] args)
         {
             // ===== 1 ЗАДАНИЕ. Заменить в строке 'test' на 'testing'. Удалить из текста все символы-цифры  ======
+
+            // 1 способ . Исходный текст проинициализирован в задаче
             Console.WriteLine();
             Console.WriteLine("1 ЗАДАНИЕ. Заменить в строке 'test' на 'testing'. Удалить из текста все символы-цифры");
             string originalText = "Test1234 is an11 important compo77nent90. Test 0911requires test11 da1ta. Test009 data is data for99 9000test!00";
@@ -22,6 +25,12 @@ namespace StringHomeWork
             Console.WriteLine("Текст без цифр:");
             string withoutNumText = Regex.Replace(replaceText, "[0-9]", "");
             Console.WriteLine(withoutNumText);
+
+            // 2 способ . Исходный текст прочитан из файла
+            FileStream f = new FileStream("TextFile.txt", FileMode.Open, FileAccess.Read);
+            string path = "MyDir\\TextFile.txt";
+            string textFromFile = File.ReadAllText(path);
+            Console.WriteLine(textFromFile);
 
             // ===== 2 ЗАДАНИЕ. Вывод текста в консоль. Конкатинация  ======
             Console.WriteLine();
@@ -69,17 +78,48 @@ namespace StringHomeWork
             // ===== 4 ЗАДАНИЕ. Удаление \ Вставка слова. Замена символа  ======
             Console.WriteLine();
             Console.WriteLine("4 ЗАДАНИЕ. Удаление - Вставка слова. Замена символа ");
-
-
-
-
-
-
-
-
-
-            string text = "Welcome to the TMS lessons.";
             Console.WriteLine();
+            string textOne = "Плохой день.";
+            Console.WriteLine(textOne);
+            Console.WriteLine(textOne.Length);
+            //int lengh = textOne.Length;
+            string mainWord = "день";
+            string newWord = "Замечательный";
+            string newsymbols = "!!!!!!!!!";
+            string newSymbol = "?";
+            //1 способ
+            Console.WriteLine("Первый способ");
+            Console.WriteLine();
+            textOne = textOne.Substring(0, textOne.Length - 1);
+            textOne = textOne.Substring(6);
+            Console.WriteLine(textOne);
+            textOne = textOne.Insert(0, newWord);
+            textOne = textOne.Insert(textOne.Length, newsymbols);   
+            Console.WriteLine(textOne);
+            textOne = textOne.Substring(0, textOne.Length - 1);
+            textOne = textOne.Insert(textOne.Length, newSymbol);
+            Console.WriteLine(textOne);
+            Console.WriteLine();
+
+            //2 способ
+            Console.WriteLine("Второй способ");
+            Console.WriteLine();
+            string textTwo = "Плохой день.";
+            Console.WriteLine(textTwo);
+            int indexOne = textTwo.IndexOf(mainWord); // находим индекс первого вхождения - ДО
+            string textTwo1 = textTwo.Substring(0, textTwo.Length - 1);
+            string textTwo2 = textTwo1.Substring(indexOne-1);
+            textTwo2 = textTwo2.Insert(0, newWord);
+            textTwo2 = textTwo2.Insert(textTwo2.Length, newsymbols);
+            textTwo2 = textTwo2.Substring(0, textTwo2.Length - 1);
+            textTwo2 = textTwo2.Insert(textTwo2.Length, newSymbol);
+            Console.WriteLine(textTwo2);
+
+
+
+
+
+
         }
     }
 }

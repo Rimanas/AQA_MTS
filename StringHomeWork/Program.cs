@@ -123,8 +123,26 @@ namespace StringHomeWork
             textTwo2 = textTwo2.Insert(textTwo2.Length, newSymbol);
             Console.WriteLine(textTwo2);
 
+            // ===== 6 ЗАДАНИЕ. Заменить знаки табуляции на пробелы в строке, двойные пробелы заменит на один пробел  ======
+            Console.WriteLine();
+            Console.WriteLine(" ЗАДАНИЕ. Заменить знаки табуляции на пробелы в строке, двойные пробелы заменит на один пробел ");
+            Console.WriteLine();
+            string text6 = "Hello.\t My name \tis Alina. Stop  Stop stop  stop. Hello\thello\thello\thello";
+            Console.WriteLine(text6);
+            Console.WriteLine(text6.Length);
+            string newText6 = System.Text.RegularExpressions.Regex.Replace(text6, "\t+", " ");
+            string nextNewText6 = System.Text.RegularExpressions.Regex.Replace(newText6, "  ", " ");
+            Console.WriteLine(newText6);
+            Console.WriteLine(nextNewText6);
 
-
+            // ===== 7 ЗАДАНИЕ. Упорядочить слова в строке по алфавиту  ======
+            Console.WriteLine();
+            Console.WriteLine("7 ЗАДАНИЕ. Упорядочить слова в строке по алфавиту ");
+            Console.WriteLine();
+            string text7 = "i   want to go sleep    because i am already tired but i have to do my favorite hw meow \t meow";
+            Console.WriteLine(text7);
+            Console.WriteLine(text7.Length);
+            
 
 
 

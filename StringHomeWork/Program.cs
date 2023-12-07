@@ -139,10 +139,29 @@ namespace StringHomeWork
             Console.WriteLine();
             Console.WriteLine("7 ЗАДАНИЕ. Упорядочить слова в строке по алфавиту ");
             Console.WriteLine();
-            string text7 = "i   want to go sleep    because i am already tired but i have to do my favorite hw meow \t meow";
+            string text7 = "i  want to go sleep  because i am already tired but i have to do my favorite hw meow \t meow";
             Console.WriteLine(text7);
             Console.WriteLine(text7.Length);
-            
+            string newText7 = System.Text.RegularExpressions.Regex.Replace(text7, "\t+", " ");
+            string nextNewText7 = System.Text.RegularExpressions.Regex.Replace(newText7, "  ", " ");
+            Console.WriteLine(nextNewText7);
+            // Использование готового метода для преобразования строки слов в массив слов. Не смогла разобраться как делать это вручную
+            string[] words = nextNewText7.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string word in words)
+            {
+                Console.WriteLine(word + " ");
+
+            }
+            // Сортировка массива слов - готовый метод
+            Console.WriteLine("Отсортированный массив имен");
+            Array.Sort(words);
+
+            foreach (string sortWords in words)
+            {
+                Console.Write(sortWords + " ");
+            }
+
+           
 
 
 

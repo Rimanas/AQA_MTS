@@ -54,3 +54,24 @@ tablet.DrawBorders();
 ((IDisplayable)tablet).DrawBorders();
 
 // -======================== Явная реализация интерфейсов ========================-
+BaseAction baseAction = new BaseAction();
+// baseAction.Move(); - Ошибка, нет метода Move
+
+// небезопасное приведение
+((IAction)baseAction).Move();
+// безопасное приведение 
+if (baseAction is IAction action) action.Move();
+// или так
+IAction baseAction2 = new BaseAction();
+baseAction2.Move();
+
+
+NewAction newAction = new NewAction();
+// newAction.Move();  - Ошибка, нет метода Move
+((IAction)newAction).Move();
+((IMovable)newAction).Move();
+
+
+HeroAction heroAction = new HeroAction();
+heroAction.Move();
+((IAction)heroAction).Move();

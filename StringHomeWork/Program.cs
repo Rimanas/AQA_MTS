@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
 
 namespace StringHomeWork
@@ -65,6 +66,13 @@ namespace StringHomeWork
             stringNew = string.Concat(stringNew, ".");
             Console.WriteLine(stringNew);
 
+            Console.WriteLine("Another способ");
+            string all = s1 + " " + s2 + " " + s3 + " " + s4 + " " + s5;
+            string[] allString = all.Split(" ");
+            foreach (var item in allString) Console.Write($" \"{item}\" .");
+           
+
+
             // ===== 3 ЗАДАНИЕ. Разделение строки на До и После  ======
             Console.WriteLine();
             Console.WriteLine("3 ЗАДАНИЕ. Разделение строки на До и После ");
@@ -98,13 +106,19 @@ namespace StringHomeWork
             //1 способ
             Console.WriteLine("Первый способ");
             Console.WriteLine();
+            // удаляем лишний символ в конце - . точку
             textOne = textOne.Substring(0, textOne.Length - 1);
+            // сохраняем все с 6 индекса - то есть убираем слово Плохой
             textOne = textOne.Substring(6);
             Console.WriteLine(textOne);
+            // Всталяем с 0 индекса новое слово - Замечательный
             textOne = textOne.Insert(0, newWord);
+            // В конец предложения вставляем знаки восклицания - 9 знаков !
             textOne = textOne.Insert(textOne.Length, newsymbols);   
             Console.WriteLine(textOne);
+            // Обрезаем строку. Убираем один знак ! в конце 
             textOne = textOne.Substring(0, textOne.Length - 1);
+            // Вставляем в конец предложения знак ?
             textOne = textOne.Insert(textOne.Length, newSymbol);
             Console.WriteLine(textOne);
             Console.WriteLine();
@@ -114,9 +128,12 @@ namespace StringHomeWork
             Console.WriteLine();
             string textTwo = "Плохой день.";
             Console.WriteLine(textTwo);
-            int indexOne = textTwo.IndexOf(mainWord); // находим индекс первого вхождения - ДО
+            int indexOne = textTwo.IndexOf(mainWord); // находим индекс первого вхождения - ДО - слово день
+            // удаляем лишний символ в конце - . точку
             string textTwo1 = textTwo.Substring(0, textTwo.Length - 1);
+            // Удаляем слово Плохой
             string textTwo2 = textTwo1.Substring(indexOne-1);
+            // Всталяем с 0 индекса новое слово - Замечательный....и далее как в 1 способе
             textTwo2 = textTwo2.Insert(0, newWord);
             textTwo2 = textTwo2.Insert(textTwo2.Length, newsymbols);
             textTwo2 = textTwo2.Substring(0, textTwo2.Length - 1);
@@ -130,7 +147,9 @@ namespace StringHomeWork
             string text6 = "Hello.\t My name \tis Alina. Stop  Stop stop  stop. Hello\thello\thello\thello";
             Console.WriteLine(text6);
             Console.WriteLine(text6.Length);
+            //заменяем знаки табуляции на пробел
             string newText6 = System.Text.RegularExpressions.Regex.Replace(text6, "\t+", " ");
+            //заменяем здвойные пробелы на 1 пробел
             string nextNewText6 = System.Text.RegularExpressions.Regex.Replace(newText6, "  ", " ");
             Console.WriteLine(newText6);
             Console.WriteLine(nextNewText6);
@@ -142,11 +161,13 @@ namespace StringHomeWork
             string text7 = "i  want to go sleep  because i am already tired but i have to do my favorite hw meow \t meow";
             Console.WriteLine(text7);
             Console.WriteLine(text7.Length);
+            // Убираем знаки табуляции и двойные прбелы с заменой на 1 пробел
             string newText7 = System.Text.RegularExpressions.Regex.Replace(text7, "\t+", " ");
             string nextNewText7 = System.Text.RegularExpressions.Regex.Replace(newText7, "  ", " ");
             Console.WriteLine(nextNewText7);
-            // Использование готового метода для преобразования строки слов в массив слов. Не смогла разобраться как делать это вручную
-            string[] words = nextNewText7.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            // Использование готового метода для преобразования строки слов в массив слов.
+            // преобразовыаем строку слов в массив слов для дальнейшей сортировки
+            string[] words = nextNewText7.Split(" ");
             foreach (string word in words)
             {
                 Console.WriteLine(word + " ");
@@ -156,15 +177,23 @@ namespace StringHomeWork
             Console.WriteLine("Отсортированный массив имен");
             Array.Sort(words);
 
+            // Выводим массив в строку
             foreach (string sortWords in words)
             {
                 Console.Write(sortWords + " ");
             }
 
-           
+            // ===== 5 ЗАДАНИЕ. Операции с номером документа  ======
+            Console.WriteLine();
+            Console.WriteLine(" 5 ЗАДАНИЕ. Операции с номером документа  ");
+            Console.WriteLine();
+            DocMethods doc = new DocMethods();
+            doc.numberDoc = "1111-aaa-2222-bbb-1a2b";
+            doc.PrintDocument();
+
+            doc.PrintNumberDoc();
 
 
-
-        }
+    }
     }
 }

@@ -182,13 +182,14 @@ namespace StringHomeWork
             {
                 Console.Write(sortWords + " ");
             }
+            Console.WriteLine();
 
             // ===== 5 ЗАДАНИЕ. Операции с номером документа  ======
             Console.WriteLine();
             Console.WriteLine(" 5 ЗАДАНИЕ. Операции с номером документа  ");
             Console.WriteLine();
             DocMethods doc = new DocMethods();
-            doc.numberDoc = "1111-aaa-2222-bbb-1a2b";
+            doc.numberDoc = "5551-AAA-2222-ABC-1a2b";
             // печатаем полный номер документа
             doc.PrintDocument();
             // печатаем первые два блока цифр из полного номера документа
@@ -199,7 +200,14 @@ namespace StringHomeWork
             doc.PrintOnlyLetters();
             // печатаем только Заглавные буквы документа через знак /
             doc.PrintUpperLetters();
-
+            // 1 способ. проверка вхождений букв abc в номер документа
+            doc.CheckOccurence();
+            // 2 способ. проверка вхождений букв abc в номер документа
+            doc.CheckOccurence1();
+            // Проверка . Начинается ли номер документа с цифер 555
+            doc.CheckStart();
+            //Проверка.Заканчивается ли номер документа на 1a2b?
+            doc.CheckEnd();
         }
     }
 }

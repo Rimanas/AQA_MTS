@@ -63,4 +63,60 @@ public class DocMethods
         Console.WriteLine($"Letters: {sb1.ToString().ToUpper()}");
     }
 
+    public void CheckOccurence()
+    {
+        Regex regex = new Regex(@"abc");
+        MatchCollection matches = regex.Matches(numberDoc.ToLower());
+        if (matches.Count > 0)
+        {
+            foreach (Match match in matches)
+                Console.WriteLine($"Occurence: {match.Value}");
+        }
+        else
+        {
+            Console.WriteLine("Совпадений не найдено");
+        }
+    }
+
+    public void CheckOccurence1()
+    {
+        string patternOcc = @"aaa"; // Группа для извлечения abc
+
+        MatchCollection matches = Regex.Matches(numberDoc.ToLower(), patternOcc);
+
+        if (matches.Count > 0)
+        {
+            Console.WriteLine($"Найдено {matches.Count} вхождений:");
+
+            foreach (Match matchItem in matches)
+            {
+                string letters = matchItem.Value;
+                Console.WriteLine($"Извлеченные буквы: {letters}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Дата не найдена.");
+        }
+    }
+
+ 
+        public void CheckStart()
+        {
+            string start = "555";
+            bool checkStart = numberDoc.Any(prefix => numberDoc.StartsWith(start));
+            Console.WriteLine($"Начинается ли номер документа с цифер 555?: {checkStart}");        // True
+        }
+
+        public void CheckEnd()
+        {
+            string end = "1a2b";
+            bool checkEnd = numberDoc.EndsWith(end);
+            Console.WriteLine($"Заканчивается ли номер документа на 1a2b?: {checkEnd}");        // True
+        }
+
+
+
+
+
 }

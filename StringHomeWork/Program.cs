@@ -189,11 +189,17 @@ namespace StringHomeWork
             Console.WriteLine();
             DocMethods doc = new DocMethods();
             doc.numberDoc = "1111-aaa-2222-bbb-1a2b";
+            // печатаем полный номер документа
             doc.PrintDocument();
-
+            // печатаем первые два блока цифр из полного номера документа
             doc.PrintNumberDoc();
+            // Замена трех букв на *
+            doc.ChangeLetters();
+            // печатаем только буквы документа через знак /
+            doc.PrintOnlyLetters();
+            // печатаем только Заглавные буквы документа через знак /
+            doc.PrintUpperLetters();
 
-
-    }
+        }
     }
 }

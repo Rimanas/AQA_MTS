@@ -1,7 +1,15 @@
 ﻿
-    public class DocMethods
-    {
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Text.RegularExpressions;
+
+public class DocMethods
+{
         public string numberDoc;
+    public int startIndex1 = 0;
+    public int startIndex2 = 8;
+    public int lenght = 4;
+
     public void PrintDocument()
         {
             Console.WriteLine($" Number of Document: {numberDoc}");
@@ -9,13 +17,50 @@
 
     public void PrintNumberDoc()
     {
-        string numberDocA= numberDoc.Substring(0,numberDoc.Length-9);
-        //Обрезаем все , что после 5 индекса
-        string numberDoc1 = numberDocA.Substring(5);
-        string numberDoc2 = numberDocA.Substring(8);
-        //numberDoc1 += numberDoc2;
-        Console.WriteLine($" Two blocks of Numbers: {numberDoc2}");
+        // Извлечение нужных подстрок из из определенного диапазона позиций
+        string substring1 = numberDoc.Substring(startIndex1, lenght);
+        string substring2 = numberDoc.Substring(startIndex2, lenght+1); 
+        //Соединение двух подстрок
+        substring1 += substring2;
+        //вывод
+        Console.WriteLine($" Two blocks of Numbers: {substring1}");
     }
 
+    public void ChangeLetters()
+    {
+        string pattern1 = @"[a-z]{3}"; // = @"[a-z]{3}" Шаблон: 3 символа
+        string replacement1 = "***";    // замена на *
+        string result1 = Regex.Replace(numberDoc, pattern1, replacement1);
+        Console.WriteLine($" Number of Document with * : {result1}");
+    }
+
+
+    public void PrintOnlyLetters()
+    {
+        // Не очень красивый вариант!!!!! . Ничего больше не смогла придумать ((((
+
+        // заменяем цифры на знак /
+        string pattern2 = @"[0-9]+"; // = @"[a-z]{3}" Шаблон: 3 символа
+        string replacement2 = "/";
+        string result2 = Regex.Replace(numberDoc, pattern2, replacement2);
+        // Удаляем знак -
+        string newresult2 = Regex.Replace(result2, "-", "");
+        // Извлекаем все кроме 1 символа
+        string docOnlyLetters = newresult2.Substring(1);
+        Console.WriteLine($" Number of Document with only letters : {docOnlyLetters}");
+
+}
+    public void PrintUpperLetters()
+    {
+        string pattern2 = @"[0-9]+"; // = @"[a-z]{3}" Шаблон: 3 символа
+        string replacement2 = "/";
+        string result2 = Regex.Replace(numberDoc, pattern2, replacement2);
+        // Удаляем знак -
+        string newresult2 = Regex.Replace(result2, "-", "");
+        // Извлекаем все кроме 1 символа
+        string docOnlyLetters = newresult2.Substring(1);
+        StringBuilder sb1 = new StringBuilder(docOnlyLetters);
+        Console.WriteLine($"Letters: {sb1.ToString().ToUpper()}");
+    }
 
 }

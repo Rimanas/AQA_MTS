@@ -13,80 +13,37 @@ namespace ClassesHomeWork
 
             // 1 Задание. Работа с классом Phone
             Console.WriteLine("1 Задание. Работа с классом Phone \n");
-            /*
+
+            //Создание 1 экзмепляра класса Phone, используя 1 конструктор
             Phone phone1 = new Phone();
+            //Вызов методов из класса Phone
             Console.WriteLine($"Номер телефона: {phone1.GetNumber(89600000000)}");
+            Console.WriteLine($"Номер телефона 2: {phone1.GetNumber1()}");
             phone1.ReceiveCall("Kate");
-
             phone1.SendMessage(89600000000, 89600000001, 89600000002, 89600000003);
-            */
-            //Phone phone1 = new Phone ()
+            //Вывести значения класса из 1 конструткора
+            Console.WriteLine($"Номер телефона 1 экземпляра: {phone1.number}");
+            Console.WriteLine($"Модель телефона 1 экземпляра: {phone1.model}");
+            Console.WriteLine($"Вес  телефона 1 экземпляра: {phone1.weight} \n");
 
+            //Создание 2 экзмепляра класса Phone, используя 2 конструктор
+            Phone phone2 = new Phone(89172898000, "Samsung");
+                //Вывести значения класса из 2 конструткора
+            Console.WriteLine($"Номер телефона 2 экземпляра: {phone2.number}");
+            Console.WriteLine($"Модель телефона 2 экземпляра: {phone2.model} \n");
 
-            class Phone
-        {
-            long number;
-            string model;
-            string name;
-            int weight;
-            //public string name;
-            //конструтор без параметров
-            //public Phone() { number = 89000000000; model = "Nokia"; weight = 100; }
-
-            /*
-            //конструктор с двумя параметрами
-            public Phone(long number, string model)
-            {
-                this.number = number;
-                this.model = model;
-                weight = 100;
-            }
-            */
-
-            // вызов 2 конструктора из 3 конгструктора
-            public Phone(long number, string model) : this(number, model, 100) { }
-
-            // 3 конструктор c тремя параметрами
-            public Phone(long number, string model, int weight)
-            {
-                this.number = number;
-                this.model = model;
-                this.weight = weight;
-            }
-
-            //public Phone() { number = 89100000000; name = "Alice"; numbers = {1000002,1212,12121}; }
-            public Phone() { number = 9700000000; name = "Alice"; }
-
-            public void ReceiveCall(string name)
-            {
-                Console.WriteLine($"Звонит: {name}");
-            }
-
-            public long GetNumber(long number)
-            {
-                return number;
-            }
-
-
-            public void SendMessage(params long[] numbers)
-            {
-                Console.WriteLine("Номера телефонов, которым будет отправлено сообщение:");
-                for (long i = 0; i < numbers.Length; i++)
-                {
-                    Console.WriteLine("Номер телефона  = " + numbers[i]);
-                }
-            }
-
-
+            //Создание 3 экзмепляра класса Phone, используя 3 конструктор
+            Phone phone3 = new Phone(89172898000, "LG", 200);
+            //Вывести значения класса из 1 конструткора
+            Console.WriteLine($"Номер телефона 3 экземпляра: {phone3.number}");
+            Console.WriteLine($"Модель телефона 3 экземпляра: {phone3.model}");
+            Console.WriteLine($"Вес  телефона 3 экземпляра: {phone3.weight} \n");
 
 
         }
 
 
     }
-    
-
-
-        
+            
     
 }

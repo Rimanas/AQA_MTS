@@ -9,7 +9,7 @@ public class Phone
     public int weight;
     //public string name;
     //конструтор без параметров
-    public Phone() { number = 89000000000; model = "Nokia"; weight = 100; }
+    public Phone() { number = 89600000001; model = "Nokia"; weight = 100; }
 
     /*
     //конструктор с двумя параметрами
@@ -22,8 +22,8 @@ public class Phone
     */
     
 
-    // вызов 2 конструктора из 3 конгструктора
-    public Phone(long number, string model) : this(number, model, 100) { }
+    // вызов 2 конструктора из 3 конструктора
+    public Phone(long number, string model) : this(number, model, 200) { }
 
     // 3 конструктор c тремя параметрами
     public Phone(long number, string model, int weight)
@@ -47,7 +47,7 @@ public void ReceiveCall (string name)
     // или другой вариант, сразу возвращать нужный номер
     public long GetNumber1()
     {
-        return 89600426000;
+        return 8999999999;
     }
 
 
@@ -60,7 +60,9 @@ public void ReceiveCall (string name)
         }
     }
 
-    
+    public void Print() => Console.WriteLine($"Номер: {number}  Модель: {model} Вес: {weight}");
+
+
 
 
 }

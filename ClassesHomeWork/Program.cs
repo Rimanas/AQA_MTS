@@ -85,7 +85,7 @@ namespace ClassesHomeWork
             Console.WriteLine(" \n 3  КАРТОЧКА \n");
             CreditCard creditCard3 = new CreditCard(7000111122223333, 300.00);
             creditCard3.Print();
-            creditCard3.WithDrowMoneyFromCard(300.00);
+            creditCard3.WithDrowMoneyFromCard(300.99);
             Console.WriteLine($"Сумма денег на карте после снятия:");
             creditCard3.Print();
 

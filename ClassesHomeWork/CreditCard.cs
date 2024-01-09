@@ -4,23 +4,28 @@ using System.Reflection;
 public class CreditCard
 {
     public long invoiceNumber;
-    public double currentSum;
-    public CreditCard(long invoiceNumber, double currentSum)
+    public double balans;
+    public CreditCard(long invoiceNumber, double balans)
     {
         this.invoiceNumber = invoiceNumber;
-        this.currentSum = currentSum;
+        this.balans = balans;
     }
 
     public void AddMoneyToCard(double addMoney)
     {
-        this.currentSum = this.currentSum + addMoney;
+        this.balans = this.balans + addMoney;
     }
 
     public void WithDrowMoneyFromCard(double withDrowMoney)
     {
-        this.currentSum = this.currentSum - withDrowMoney;
+        if ((this.balans - withDrowMoney) >= 0)
+        { this.balans = this.balans - withDrowMoney; }
+        else 
+        { Console.WriteLine("Недостатчоно средств на карте для снятия денег"); }
+        
     }
 
-    public void Print() => Console.WriteLine($"Номер Счёта: {invoiceNumber}  Сумма на карте: {currentSum}");
+
+    public void Print() => Console.WriteLine($"Номер Счёта: {invoiceNumber}  Сумма на карте: {balans}");
 
 }

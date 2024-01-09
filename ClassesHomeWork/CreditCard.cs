@@ -21,7 +21,7 @@ public class CreditCard
         if ((this.balans - withDrowMoney) >= 0)
         { this.balans = this.balans - withDrowMoney; }
         else 
-        { Console.WriteLine("Недостатчоно средств на карте для снятия денег"); }
+        { Console.WriteLine("Недостатчно средств на карте для снятия денег"); }
         
     }
 

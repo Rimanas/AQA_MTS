@@ -94,13 +94,23 @@ namespace ClassesHomeWork
 
             // -----------  3 Задание. БАНКОМАТ  ---------
             Console.WriteLine("\n 3 Задание.  БАНКОМАТ \n");
-            Atm atm1 = new Atm(10, 1, 50);
+            Atm atm1 = new Atm(1, 1, 1);
             Console.WriteLine($"Количество купюр в банкомате:");
             atm1.Print();
-            atm1.AddMoneyToAtm(0, 10, 1);
+            atm1.AddMoneyToAtm(2, 2, 2);
             Console.WriteLine($"Количество купюр в банкомате после внесения:");
             atm1.Print();
+            atm1.SumAtm(atm1.ru20, atm1.ru50, atm1.ru100, out atm1.sum);
+            atm1.WithDrowMoneyFromAtm(1000);
 
+            // -----------  4 Задание. ВРАЧИ  ---------
+            int number;
+            Console.WriteLine("\n 4 Задание.  ВРАЧИ \n");
+            TreatmentPlan treatmentPlan = new TreatmentPlan(0);
+
+            Console.WriteLine("Введите код лечения, затем нажмите Enter:");
+            number = Convert.ToInt32(Console.ReadLine());
+            treatmentPlan.Plan(number);
 
         }
 

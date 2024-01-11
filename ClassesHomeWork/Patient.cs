@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ClassesHomeWork
 {
-    internal class Patient
+    public class Patient
     {
+        public string name;
+        public int age; 
+      
+        public Patient(string name, int age) 
+        {
+            this.name = name;
+            this.age = age;
+        }
     }
 }

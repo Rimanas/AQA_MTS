@@ -69,7 +69,7 @@ namespace ClassesHomeWork
             Console.WriteLine("2 Задание. Работа с классом CreditCard  \n 1  КАРТОЧКА \n");
             CreditCard creditCard1 = new CreditCard(5000111122223333, 100.00);
             creditCard1.Print();
-            creditCard1.AddMoneyToCard(100.00);          
+            creditCard1.AddMoneyToCard(100.00);
             Console.WriteLine($"Сумма денег на карте после зачисления:");
             creditCard1.Print();
 
@@ -100,12 +100,22 @@ namespace ClassesHomeWork
             atm1.AddMoneyToAtm(2, 2, 2);
             Console.WriteLine($"Количество купюр в банкомате после внесения:");
             atm1.Print();
+            // подсчет денежных средств в банкомате
             atm1.SumAtm(atm1.ru20, atm1.ru50, atm1.ru100, out atm1.sum);
-            atm1.WithDrowMoneyFromAtm(1000);
+            Console.WriteLine("\n Проверка возможности снятия денег");
+            //atm1.WithDrowMoneyFromAtm(1000);
+            Console.WriteLine($"Денежных средств (1000р) в банкомате для снятия достаточно?: {atm1.WithDrowMoneyFromAtm(1000)} ");
+            Console.WriteLine($"Денежных средств (100р) в банкомате для снятия достаточно?: {atm1.WithDrowMoneyFromAtm(100)} ");
+            Console.WriteLine("Денежных средств (100р) в банкомате для снятия достаточно? - {0}", atm1.WithDrowMoneyFromAtm(100) ? "Yes" : "No");
 
             // -----------  4 Задание. ВРАЧИ  ---------
-            int number;
+        
             Console.WriteLine("\n 4 Задание.  ВРАЧИ \n");
+            int number;
+            Patient patient1 = new Patient("Bob", 25);
+            Patient patient2 = new Patient("Kate", 35);
+            Patient patient3 = new Patient("Stiv", 45);
+
             TreatmentPlan treatmentPlan = new TreatmentPlan(0);
 
             Console.WriteLine("Введите код лечения, затем нажмите Enter:");

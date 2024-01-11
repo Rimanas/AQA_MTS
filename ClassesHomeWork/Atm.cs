@@ -27,13 +27,23 @@
         Console.WriteLine($"Денежных средств в банкомате: {sum} ");
     }
 
+
     // ---------ПЕРЕДЕЛАТЬ -------
+    /*
     public void WithDrowMoneyFromAtm(int money)
     {
         if ((sum - money) >= 0)
         { sum = sum - money; }
         else
         { Console.WriteLine("Недостатчно средств для снятия денег"); }
+
+    }
+    */
+
+
+    public bool WithDrowMoneyFromAtm(int money)
+    {
+        return sum >= money;
 
     }
 

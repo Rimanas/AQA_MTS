@@ -9,12 +9,13 @@ namespace ClassesHomeWork
     public class Patient
     {
         public string name;
-        public int age; 
+        public int age;
+        public int plan;
       
-        public Patient(string name, int age) 
+        public void Print()
         {
-            this.name = name;
-            this.age = age;
+            Console.WriteLine($" Name: {name}, Age : {age}, PlanTreatment : {plan} ");
         }
+
     }
 }

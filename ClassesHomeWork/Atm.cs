@@ -27,27 +27,24 @@
         Console.WriteLine($"Денежных средств в банкомате: {sum} ");
     }
 
-
-    // ---------ПЕРЕДЕЛАТЬ -------
-    /*
-    public void WithDrowMoneyFromAtm(int money)
-    {
-        if ((sum - money) >= 0)
-        { sum = sum - money; }
-        else
-        { Console.WriteLine("Недостатчно средств для снятия денег"); }
-
-    }
-    */
-
-
     public bool WithDrowMoneyFromAtm(int money)
     {
         return sum >= money;
 
     }
 
-    //public void Print() => Console.WriteLine($"Количество купюр по 20р: {ru20}  Количство купюр по 50р: {ru50}  Количство купюр по 100р: {ru100}");
-    //public void PrintSum() => Console.WriteLine($"Денежных средств в банкомате: {SumAtm.sum} ");
+    // метод очень грубый: не учитывает , что нет необходимого количества купюр,
+    // не учитывает сумму , которая не кратна имеющимся купюрам 
+    public void CalculateNotes(int money, ref int ru20, ref int ru50, ref int ru100)
+    {
+        int ostatok1 = money % bill100;
+        ru100 = (money - ostatok1) / bill100;
+        int ostatok2 = ostatok1 % bill50;
+        ru50 = (ostatok1 - ostatok2) / bill50;
+        int ostatok3 = ostatok2 % bill20;
+        ru20 = (ostatok2 - ostatok3) / bill20;
+        Console.WriteLine($"Купюр по 100 : {ru100} , Купюр по 50 : {ru50}, Купюр по 20 : {ru20}");
+    }
+
 
 }

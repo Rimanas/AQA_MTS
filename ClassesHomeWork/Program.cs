@@ -85,15 +85,14 @@ namespace ClassesHomeWork
             Console.WriteLine(" \n 3  КАРТОЧКА \n");
             CreditCard creditCard3 = new CreditCard(7000111122223333, 300.00);
             creditCard3.Print();
-            creditCard3.WithDrowMoneyFromCard(300.99);
+            creditCard3.WithDrowMoneyFromCard(400.99);
             Console.WriteLine($"Сумма денег на карте после снятия:");
             creditCard3.Print();
-
-            //  !!!!!!!!!!!!!!!!!!дописать в метод, если сумма снятия больше, чем на карте
 
 
             // -----------  3 Задание. БАНКОМАТ  ---------
             Console.WriteLine("\n 3 Задание.  БАНКОМАТ \n");
+            int giveSum;
             Atm atm1 = new Atm(1, 1, 1);
             Console.WriteLine($"Количество купюр в банкомате:");
             atm1.Print();
@@ -103,24 +102,39 @@ namespace ClassesHomeWork
             // подсчет денежных средств в банкомате
             atm1.SumAtm(atm1.ru20, atm1.ru50, atm1.ru100, out atm1.sum);
             Console.WriteLine("\n Проверка возможности снятия денег");
-            //atm1.WithDrowMoneyFromAtm(1000);
+
             Console.WriteLine($"Денежных средств (1000р) в банкомате для снятия достаточно?: {atm1.WithDrowMoneyFromAtm(1000)} ");
-            Console.WriteLine($"Денежных средств (100р) в банкомате для снятия достаточно?: {atm1.WithDrowMoneyFromAtm(100)} ");
+            Console.WriteLine($"Денежных средств (100р) в банкомате для снятия достаточно?: {atm1.WithDrowMoneyFromAtm(100)} "); 
             Console.WriteLine("Денежных средств (100р) в банкомате для снятия достаточно? - {0}", atm1.WithDrowMoneyFromAtm(100) ? "Yes" : "No");
+
+            Console.WriteLine("\n Вывод какими купюрами и в каком количестве выдаётся сумма");
+            Console.WriteLine("Введите сумму для снятия, затем нажмите Enter:");
+            giveSum = Convert.ToInt32(Console.ReadLine());
+            atm1.CalculateNotes(giveSum, ref atm1.ru20, ref atm1.ru50, ref atm1.ru100);
 
             // -----------  4 Задание. ВРАЧИ  ---------
         
             Console.WriteLine("\n 4 Задание.  ВРАЧИ \n");
-            int number;
-            Patient patient1 = new Patient("Bob", 25);
-            Patient patient2 = new Patient("Kate", 35);
-            Patient patient3 = new Patient("Stiv", 45);
+
+            Patient[] patients = new Patient[5];   
+            for (int i = 0; i < patients.Length; i++)
+            {
+                patients[i] = new Patient();
+                patients[i].name = "Bob" + i;
+                patients[i].age = new Random().Next(18,100);
+                patients[i].plan = new Random().Next(1,10);
+            }
+            foreach (Patient patient in patients)
+            { 
+                patient.Print();
+            }
 
             TreatmentPlan treatmentPlan = new TreatmentPlan(0);
+            foreach (Patient patient in patients)
+            {
+                treatmentPlan.Plan(patient.plan);
+            }
 
-            Console.WriteLine("Введите код лечения, затем нажмите Enter:");
-            number = Convert.ToInt32(Console.ReadLine());
-            treatmentPlan.Plan(number);
 
         }
 

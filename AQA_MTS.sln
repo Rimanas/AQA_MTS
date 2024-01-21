@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Properties", "Properties\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPHomeWorkShapes", "OOPHomeWork\OOPHomeWorkShapes.csproj", "{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPHomeWorkDoctors", "OOPHomeWorkDoctors\OOPHomeWorkDoctors.csproj", "{C03F2140-9D75-4491-AE5F-EFE9D852E539}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03F2140-9D75-4491-AE5F-EFE9D852E539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03F2140-9D75-4491-AE5F-EFE9D852E539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03F2140-9D75-4491-AE5F-EFE9D852E539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03F2140-9D75-4491-AE5F-EFE9D852E539}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

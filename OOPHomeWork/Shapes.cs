@@ -29,8 +29,8 @@ namespace OOPHomeWorkShapes
         public virtual double CalcScuare()
         {
             double semiP = (A + B + C) / (double)2;
-            double square = Math.Sqrt(semiP * (semiP - A) * (semiP - B) * (semiP - C));
-            return square;
+            //double square = Math.Sqrt(semiP * (semiP - A) * (semiP - B) * (semiP - C));
+            return semiP;
         }
 
     }

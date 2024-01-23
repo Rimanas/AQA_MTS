@@ -12,6 +12,8 @@ namespace OOPHomeWorkShapes
         {
             Console.WriteLine("EquilateralTriangle:" + base.GetHashCode());
         }
+
+        //public void EquilateralTriangle() { }
         public override double CalcScuare()
         {
             double square = (Math.Sqrt(3) / 4) * Math.Pow(A, 2); ;

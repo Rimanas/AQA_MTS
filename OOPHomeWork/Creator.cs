@@ -13,6 +13,7 @@ namespace OOPHomeWorkShapes
             Console.WriteLine("Triangle:" + base.GetHashCode());
         }
         Shapes triangle1 = new EquilateralTriangle(1,1,1);
+        Shapes triangle2 = new VersatileTriangle(1,2,3);
         /*
         public override double CalcScuare()
         {
@@ -29,7 +30,7 @@ namespace OOPHomeWorkShapes
             else if (a == b || a == c || b == c) 
                 Console.WriteLine("Это равнобедренный треугольник!");
             else
-                Console.WriteLine($"Это треугольник.: {base.CalcScuare()}");
+                Console.WriteLine($"Это треугольник.: {triangle2.CalcScuare()}");
 
 
             

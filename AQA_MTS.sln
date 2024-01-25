@@ -2,14 +2,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstraction", "Abstraction\Abstraction.csproj", "{0D6876C6-242E-4651-AA72-050953A3AA7F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Encapsuiation", "Encapsuiation\Encapsuiation.csproj", "{FC4434F5-0204-458E-9B09-3F753722CE07}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{01607FA5-7579-47C2-8AF4-BA883D59BBBD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Properties", "Properties\Properties.csproj", "{7B552831-7663-47C6-922A-80BCD783EDFA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPHomeWorkShapes", "OOPHomeWork\OOPHomeWorkShapes.csproj", "{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPHomeWorkDoctors", "OOPHomeWorkDoctors\OOPHomeWorkDoctors.csproj", "{C03F2140-9D75-4491-AE5F-EFE9D852E539}"
@@ -22,22 +14,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0D6876C6-242E-4651-AA72-050953A3AA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D6876C6-242E-4651-AA72-050953A3AA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D6876C6-242E-4651-AA72-050953A3AA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D6876C6-242E-4651-AA72-050953A3AA7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC4434F5-0204-458E-9B09-3F753722CE07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC4434F5-0204-458E-9B09-3F753722CE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC4434F5-0204-458E-9B09-3F753722CE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC4434F5-0204-458E-9B09-3F753722CE07}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01607FA5-7579-47C2-8AF4-BA883D59BBBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B552831-7663-47C6-922A-80BCD783EDFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B552831-7663-47C6-922A-80BCD783EDFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B552831-7663-47C6-922A-80BCD783EDFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B552831-7663-47C6-922A-80BCD783EDFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC5FFB3-AEEC-42A1-B444-A6043E13CB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU

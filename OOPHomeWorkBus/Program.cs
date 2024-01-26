@@ -31,6 +31,18 @@ namespace OOPHomeWorkBus
                 $"Тип транспорта: {transportType3.TypeOfTransport()}");
             Console.WriteLine($"\n Информация о типе транспорта \n " +
                 $"Тип транспорта: {transportType4.TypeOfTransport()}");
+
+            //Виды транспорта
+            KindOfTransport trollyeBus = new TrollyeBus();
+            // Информация об автобусе
+            trollyeBus.DestinationT = "Kazan";
+            trollyeBus.NumberT = 111;
+            trollyeBus.TimeT = DateTime.Now;
+            trollyeBus.NumberOfPlacesT = 200;
+            Console.WriteLine(trollyeBus.NameT);
+            Console.WriteLine($"Информация об автобусе \n Пункт назначения: {trollyeBus.DestinationT}\n " +
+                $"Номер автобуса : {trollyeBus.NumberT}\n Время отпрвления : {trollyeBus.TimeT}\n " +
+                $"Количество мест : {trollyeBus.NumberOfPlacesT} транспорт:{trollyeBus.NameT}");
         }
     }
 }

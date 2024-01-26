@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkShapes
 {
-    internal class Shapes
+    public abstract class Shapes
     {
         //public string nameOfShape;
         public int A, B, C;
@@ -19,19 +19,11 @@ namespace OOPHomeWorkShapes
         {
             A = a; B = b;
         }
-        // Виртуальный метод для расчёта периметра треугольника
-        public virtual int CalcPerimeter()
-        {
-            int p = A + B + C;
-            return p;
-        }
+
         // Виртуальный метод для расчёта площади
-        public virtual double CalcScuare()
-        {
-            double semiP = (A + B + C) / (double)2;
-            //double square = Math.Sqrt(semiP * (semiP - A) * (semiP - B) * (semiP - C));
-            return semiP;
-        }
+        public abstract double CalcScuare();
+
+
 
     }
 }

@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkShapes
 {
-    public class Rectangle: Shapes
+    public class Square : Rectangle
     {
-        public Rectangle(int a, int b) : base(a, b)
+        public Square(int a) : base(a, a)
         {
         }
         public override double CalcScuare()
         {
-            double square = A*B;
-            return square;
+            return A * A;
         }
     }
 }

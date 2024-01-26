@@ -6,36 +6,33 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkShapes
 {
-    internal class Creator : Shapes
+    public static class Creator
     {
-        public Creator(int a, int b, int c) : base(a, b, c)
-        {
-            Console.WriteLine("Triangle:" + base.GetHashCode());
-        }
-        Shapes triangle1 = new EquilateralTriangle(1,1,1);
-        Shapes triangle2 = new VersatileTriangle(1,2,3);
-        /*
-        public override double CalcScuare()
-        {
-            double square = (Math.Sqrt(3) / 4) * Math.Pow(A, 2); ;
-            return square;
-        }
-        */
-        public void CreateTriangels(int a, int b, int c)
+
+        public static Triangles CreateTriangels(int a, int b, int c)
         {
             if (a + b <= c || a + c <= b || b + c <= a)
+            {
                 Console.WriteLine("Это не треугольник!");
-            else if (a == b && b == c)
-                Console.WriteLine($"Это равносторонний треугольник!: {triangle1.CalcScuare()}");
-            else if (a == b || a == c || b == c) 
-                Console.WriteLine("Это равнобедренный треугольник!");
-            else
-                Console.WriteLine($"Это треугольник.: {triangle2.CalcScuare()}");
-
-
-            
-      
-        }
+            }
+            if (a==0 || b==0 || c==0)
+            {
+                Console.WriteLine("Это не треугольник, так как одна сторона 0");
+            }
+            if (a == b && b == c)
+            {
+                return new EquilateralTriangle(a, b, c);   //равносторонний
+            }
+            if (a == b || a == c || b == c)
+            {
+                return new IsoscelesTriangle(a, b, c);   //равнобедренный
+            }
+            if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b)
+            {
+                return new RectangularTriangle(a, b, c);  // прямоугольный
+            }
+            return new Triangles(a, b, c);
+        }   
 
     }
 }

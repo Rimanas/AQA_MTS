@@ -6,25 +6,23 @@
         {
             // ---------    1 Задание. Геометрические фигуры ---------
             Console.WriteLine("1 Задание. Геометрические фигуры \n Расчет полащади \n");
-            Creator creator = new Creator(10,10,10);
-            Creator creator1 = new Creator(5,6,7);
-            Shapes triangle = new VersatileTriangle(5,6,7);
-            Shapes triangle10 = new EquilateralTriangle(5, 5, 5);
-            //Console.WriteLine($"Треуголник: {.CreateTriangels()} ");
-            Console.WriteLine($"Периметр треуголника: {triangle.CalcPerimeter()} ");
-            Console.WriteLine($"Площадь треуголника разностороннего 1: {triangle.CalcScuare()} ");
-            Console.WriteLine($"Площадь треуголника 2: {triangle10.CalcScuare()} ");
-            //Console.WriteLine($"Площадь треуголника CREATOR: {creator} ");
-            //double s = creator.CreateTriangels(10,10,10);
-            //Console.WriteLine($"Площадь треуголника CREATOR: {creator.CalcScuare()} ");
-            //Console.WriteLine($"Площадь треуголника CREATOR: {creator1.CalcScuare()} ");
-            creator.CreateTriangels(5,5,5);
-            creator.CreateTriangels(5,6,7);
-            //double s = creator.CreateTriangels(10, 10, 10)
-            //Console.WriteLine($"Площадь треуголника CREATOR: {creator.CreateTriangels(10,10,10)} ");
+            Shapes[] shapes = new Shapes[]
+            { 
+                Creator.CreateTriangels(20,30,10),   //разносторонний треугольник -- здесь должен быть 0 запись , что это не тругольник
+                Creator.CreateTriangels(20,30,15),   //разносторонний треугольник
+                Creator.CreateTriangels(20,20,20),   //равносторонний треугольник
+                Creator.CreateTriangels(50,50,40),   //равнобедренный треугольник
+                Creator.CreateTriangels(50,30,40),   //прямоугольный треугольник
+                new Rectangle(12, 5),
+                new Rectangle(3, 7),
+                new Square(10)
+            };
 
-            Rectangle rectangle = new Rectangle(5, 6);
-            Console.WriteLine($"Площадь прямоугольника: {rectangle.CalcScuare()} ");
+            foreach (var shape in shapes)
+            {
+                var shapeScuare = shape.CalcScuare();
+                Console.WriteLine($"Площадь геометрической фигуры = {shapeScuare}"); 
+            }
 
         }
     }

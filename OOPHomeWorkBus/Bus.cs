@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkBus
 {
-    internal class Bus
+    public class Bus
     {
         string destination;            //поле пункта назначения
         public string Destination      //свойство поля пункта назначения
@@ -42,6 +42,12 @@ namespace OOPHomeWorkBus
                 if (value > 0)
                     numberOfPlaces = value;
             }
+        }
+        public void Print()
+        {
+            Console.WriteLine($"Информация об автобусе \n Пункт назначения: {Destination}\n " +
+                $"Номер автобуса : {NumberBus}\n Время отпрвления : {Time}\n " +
+                $"Количество мест : {NumberOfPlaces}");
         }
     }
 }

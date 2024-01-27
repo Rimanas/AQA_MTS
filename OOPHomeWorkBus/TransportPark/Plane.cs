@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkBus
 {
-    internal class AirTransport: TransportType
+    public class Plane: KindOfTransport
     {
-        public AirTransport() { }
         public override string TypeOfTransport()
         {
             return "AirTransport";

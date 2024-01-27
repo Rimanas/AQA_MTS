@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkBus
 {
-    internal class GraundTransport: TransportType
+    public class Boat: KindOfTransport
     {
-        public GraundTransport() { }
         public override string TypeOfTransport()
         {
-            return "GraundTransport";
+            return "WaterTransport";
         }
     }
 }

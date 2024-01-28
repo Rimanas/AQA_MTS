@@ -9,14 +9,11 @@ namespace OOPHomeWorkDoctors
     internal class TreatmentPlan: Doctors
     {
         public int code;
-
         public TreatmentPlan(int code)
         { this.code = code; }
-
         Doctors dantist = new Dantist();
         Doctors surgeon = new Surgeon();  
         Doctors therapist = new Therapist();    
-
         public TreatmentPlan() { }
         public void Plan(int code)
         {

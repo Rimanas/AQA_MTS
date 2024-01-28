@@ -10,7 +10,6 @@ namespace OOPHomeWorkShapes
     {
         //public string nameOfShape;
         public int A, B, C;
-
         public Shapes(int a, int b, int c) 
         {
             A= a; B = b; C= c;
@@ -19,11 +18,7 @@ namespace OOPHomeWorkShapes
         {
             A = a; B = b;
         }
-
         // Виртуальный метод для расчёта площади
         public abstract double CalcScuare();
-
-
-
     }
 }

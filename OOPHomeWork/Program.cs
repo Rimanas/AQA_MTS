@@ -17,7 +17,6 @@
                 new Rectangle(3, 7),
                 new Square(10)
             };
-
             foreach (var shape in shapes)
             {
                 var shapeScuare = shape.CalcScuare();

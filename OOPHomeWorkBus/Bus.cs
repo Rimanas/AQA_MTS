@@ -14,7 +14,6 @@ namespace OOPHomeWorkBus
             get { return destination; }
             set { destination = value; }
         }
-
         int numberBus;                 //поле номера автобуса
         public int NumberBus           //свойство поля номера автобуса
         {
@@ -24,15 +23,13 @@ namespace OOPHomeWorkBus
                 if (value > 0)
                     numberBus = value;
             }
-        }
-        
+        }       
         DateTime time;              //поле времени отправления
         public DateTime Time        //свойство поля времени отправления
         {
             get { return time; }
             set { time = value; }
         }
-
         int numberOfPlaces;                 //число мест в автобусе
         public int NumberOfPlaces           //свойство поля число мест
         {

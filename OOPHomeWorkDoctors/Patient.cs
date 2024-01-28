@@ -11,7 +11,6 @@ namespace OOPHomeWorkDoctors
         public string name;
         public int age;
         public int plan;
-
         public void Print()
         {
             Console.WriteLine($" Name: {name}, Age : {age}, PlanTreatment : {plan} ");

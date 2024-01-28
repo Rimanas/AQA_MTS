@@ -8,7 +8,6 @@ namespace OOPHomeWorkDoctors
 {
     internal class Surgeon: Doctors
     {
-
         public override void Heal()
         {
             Console.WriteLine("Применяется метод Лечить врача Хирурга");

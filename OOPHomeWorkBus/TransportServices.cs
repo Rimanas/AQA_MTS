@@ -29,7 +29,6 @@ namespace OOPHomeWorkBus
                     }
                 }
             }
-
             return list;
         }
     }

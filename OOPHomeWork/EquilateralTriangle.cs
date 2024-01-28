@@ -12,7 +12,6 @@ namespace OOPHomeWorkShapes
         public EquilateralTriangle(int a, int b, int c) : base(a, b, c)
         {
         }
-
         public override double CalcScuare()
         {
             double square = (Math.Sqrt(3) / 4) * Math.Pow(A, 2); ;

@@ -18,17 +18,14 @@ namespace OOPHomeWorkShapes
             {
                 return (B * C) / (double)2;
             }
-
             if (B > A && B > C)
             {
                 return (A * C) / (double)2;
             }
-
             if (C > A && C > B)
             {
                 return (A * B) / (double)2;
             }
-
             return base.CalcScuare();
         }
     }

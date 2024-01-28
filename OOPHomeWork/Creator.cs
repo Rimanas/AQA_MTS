@@ -8,7 +8,6 @@ namespace OOPHomeWorkShapes
 {
     public static class Creator
     {
-
         public static Triangles CreateTriangels(int a, int b, int c)
         {
             if (a + b <= c || a + c <= b || b + c <= a)

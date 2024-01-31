@@ -5,7 +5,7 @@ namespace NUnitTestProject
         [SetUp]
         public void SetUp1()
         {
-            Console.WriteLine($"{this}: SetUp...{i++}");
+            Console.WriteLine($"{this}: SetUp from SimpleTest...{i++}");
         }
 
         [Test]

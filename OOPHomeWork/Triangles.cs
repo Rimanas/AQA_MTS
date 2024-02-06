@@ -24,6 +24,5 @@ namespace OOPHomeWorkShapes
             double square = Math.Sqrt(semiP * (semiP - A) * (semiP - B) * (semiP - C));
             return square;
         }
-
     }
 }

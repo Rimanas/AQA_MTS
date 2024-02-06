@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPHomeWorkDoctors
 {
-    internal class TreatmentPlan: Doctors
+    internal class TreatmentPlan
     {
         public int code;
         public TreatmentPlan(int code)

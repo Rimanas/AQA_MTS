@@ -22,7 +22,6 @@
                 var shapeScuare = shape.CalcScuare();
                 Console.WriteLine($"Площадь геометрической фигуры = {shapeScuare}"); 
             }
-
         }
     }
 }

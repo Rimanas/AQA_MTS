@@ -32,6 +32,5 @@ namespace OOPHomeWorkShapes
             }
             return new Triangles(a, b, c);
         }   
-
     }
 }

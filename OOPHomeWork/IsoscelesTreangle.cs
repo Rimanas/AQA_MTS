@@ -29,5 +29,4 @@ namespace OOPHomeWorkShapes
             return base.CalcScuare();
         }
     }
-
 }

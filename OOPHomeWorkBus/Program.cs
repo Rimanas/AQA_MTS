@@ -55,7 +55,6 @@ namespace OOPHomeWorkBus
             {
                 if (!(timeDeparture == string.Empty ||
                       (timeDeparture != string.Empty && transport.Time > time)))
-
                 {
                     continue;
                 }
@@ -97,7 +96,6 @@ namespace OOPHomeWorkBus
                 }
                 if (!(dest == string.Empty ||
                       (dest != string.Empty && transport.Destination == dest)))
-
                 {
                     continue;
                 }
@@ -116,7 +114,6 @@ namespace OOPHomeWorkBus
             {
                 Console.WriteLine("Нет подходящего транспорта на заданное время с указанным пунктом отправления");
             }
-
         }
     }
 }

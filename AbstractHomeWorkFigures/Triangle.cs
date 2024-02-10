@@ -11,7 +11,7 @@ namespace AbstractHomeWorkFigures
         public Triangle(double a, double b, double c) : base(a, b, c)
         {
         }
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine($"Длина сторон треугольника: A : {A} см, B : {B} см и C : {C} см");
         }

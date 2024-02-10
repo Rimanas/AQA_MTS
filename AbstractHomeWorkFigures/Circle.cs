@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace AbstractHomeWorkFigures
 {
-    public class Rectangle : Figures
+    public class Circle : Figures
     {
-        public Rectangle(double a, double b) : base(a, b)
+        public Circle(double r) : base(r)
         {
         }
         public override void Print()
         {
-            Console.WriteLine($"Длина сторон прямоугольника: A : {A} см, B : {B} см ");
+            Console.WriteLine($"Радиус окружности: R : {R} см");
         }
         public override double CalcScuare()
         {
-            double square = A * B;
+            double square = Math.PI * R * R;
             return square;
         }
         public override double CalcPerimetr()
         {
-            double perimetr = (A + B)*2;
+            double perimetr = Math.PI*2*R;
             return perimetr;
         }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AbstractHomeWorkProduct
+﻿namespace AbstractHomeWorkProduct
 {
     public abstract class BaseProduct
     {
@@ -18,6 +12,11 @@ namespace AbstractHomeWorkProduct
             Price = price;  
             DateOfManufacture = dateOfManufacture;  
             ExpirationDate = expirationDate;
+        }
+        protected BaseProduct(string name, double price)
+        {
+            Name = name;
+            Price = price;
         }
         public abstract void DisplayInformation();
         public abstract bool IsExpiredDate();

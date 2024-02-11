@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AbstractHomeWorkProduct
+﻿namespace AbstractHomeWorkProduct
 {
     public class Product : BaseProduct
     {
@@ -19,7 +13,7 @@ namespace AbstractHomeWorkProduct
         }
         public override bool IsExpiredDate()
         { 
-            throw new NotImplementedException();
+            return DateOnly.FromDateTime(DateTime.Now) > ExpirationDate; ;
         }
     }
 }

@@ -1,12 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace AbstractHomeWorkProduct
 {
-    internal class SetOfProduct
+    public class SetOfProduct : BaseProduct
     {
+        public string ListofProducts;
+        public SetOfProduct(string name,double price, string listOfProducts) :
+            base(name, price)
+        {
+            ListofProducts = listOfProducts;
+        }
+        public override void DisplayInformation()
+        {
+            Console.WriteLine($"Комплект: {Name}, Цена: {Price},Перечень: {ListofProducts}");
+        }
+        public override bool IsExpiredDate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

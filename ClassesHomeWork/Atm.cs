@@ -26,13 +26,10 @@
         sum = ru20 * bill20 + ru50 * bill50 + ru100 * bill100;  
         Console.WriteLine($"Денежных средств в банкомате: {sum} ");
     }
-
     public bool WithDrowMoneyFromAtm(int money)
     {
         return sum >= money;
-
     }
-
     // метод очень грубый: не учитывает , что нет необходимого количества купюр,
     // не учитывает сумму , которая не кратна имеющимся купюрам 
     public void CalculateNotes(int money, ref int ru20, ref int ru50, ref int ru100)
@@ -45,6 +42,4 @@
         ru20 = (ostatok2 - ostatok3) / bill20;
         Console.WriteLine($"Купюр по 100 : {ru100} , Купюр по 50 : {ru50}, Купюр по 20 : {ru20}");
     }
-
-
 }

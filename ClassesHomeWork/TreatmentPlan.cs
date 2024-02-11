@@ -2,8 +2,7 @@
 {
     public int code;
     public TreatmentPlan(int code)
-    { this.code = code; }  
-    
+    { this.code = code; }      
     //Методы лечить врачей
     public void HealTherapist()
     {
@@ -34,9 +33,6 @@
                 HealTherapist();
                 break;
         }
-    }
-
-      
-         
+    }              
 }
 

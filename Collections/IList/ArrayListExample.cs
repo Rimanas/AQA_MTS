@@ -15,6 +15,7 @@ public class ArrayListExample
         stringList.Add("Первый");
         stringList.Add("Второй");
         stringList.Add("Третий");
+        Console.WriteLine(stringList.Capacity);   
         /*
         // Создаем ArrayList для хранения строк в С# 12
         ArrayList stringList1 =

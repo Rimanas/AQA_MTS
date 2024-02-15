@@ -1,5 +1,7 @@
 ﻿using ExceptionsHomeWork;
 using ExceptionsHomeWork.TaskAuthorization;
+using ExceptionsHomeWork.TaskOrders;
+using ExceptionsHomeWork.TaskOrders.Exceptions;
 
 Console.WriteLine("1 Task");
 try
@@ -18,6 +20,39 @@ catch (WrongLoginException e)
     Console.WriteLine(e.Message);
 }
 catch (WrongPasswordException e)
+{
+    Console.WriteLine(e.Message);
+}
+Console.WriteLine("2 Task");
+try
+{
+    List<Order> order1 =
+[
+    new("Apple", 10, 1230.55),
+    new("Pineapple", 10, 670.99),
+    new("Banana", 20, 2050.00),
+    new("Carrot", 30, 2300.00),
+];
+    List<Order> order2 = [];
+    //OrderCreator.CheckOrder(11100, order1, "Казань", "Bob"); // позитивный сценарий
+    //OrderCreator.CheckOrder(11100, order2, "Казань", "Bob"); // нет товаров
+    //OrderCreator.CheckOrder(11101, order1, "", "Bob"); // пустой адрес
+    //OrderCreator.CheckOrder(11102, order1, "Казань", ""); // пустой получатель
+    //OrderCreator.CheckOrder(11102, order1, "", ""); // пустой адрес и получатель
+    //OrderCreator.CheckOrder(-100000, order1, "Казань", "Bob"); // отрицательный номер заказа
+    OrderCreator.CheckOrder(-11100, order2, "", ""); // полностью негативный сенарий.Срабатывает 1 Exception
+}
+catch (EmptyOrderException e)
+{
+    Console.WriteLine(e.Message);
+}
+
+catch (InvalidOrderNumberException e)
+{
+    Console.WriteLine(e.Message);
+}
+
+catch (DeliveryInformationMissingException e)
 {
     Console.WriteLine(e.Message);
 }

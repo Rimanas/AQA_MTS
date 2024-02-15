@@ -27,8 +27,6 @@ namespace ExceptionsHomeWork.TaskAuthorization
             {
                 throw new WrongPasswordException(nameof(password), "Пароли не совпадают");
             }
-
-
             return true;
         }
         private static bool StringIsDigits(string s)

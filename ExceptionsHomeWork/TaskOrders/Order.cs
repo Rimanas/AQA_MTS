@@ -10,10 +10,12 @@ namespace ExceptionsHomeWork.TaskOrders
     {
         public string Name;
         public int Number;
-        public Order(string name, int number)
+        public double Price;
+        public Order(string name, int number, double price)
         {
             Name = name;
             Number = number;
+            Price = price;  
         }   
     }
 }

@@ -9,36 +9,22 @@ namespace CollectionsHWBooks
 {
     internal class Books
     {
+        string name;
+        string author;
+        int year;
         public Books(string author, string name,  int year)
         {
-            Author = author;
-            Name = name;
-            Year = year;
+            this.author = author;
+            this.name = name;
+            this.year = year;
         }
-        public string Author { get; private set; }
-        public string Name { get; private set; }
-        public int Year { get; private set; }
+        public string Author { get => author; set => author = value; }
+        public string Name { get => name; set => name = value; }
+        public int Year { get => year; set => year = value; }
+
         public override string ToString()
         {
             return string.Format("Автор: {Author}, Название: {Name}, Издательство: {Year}", Author, Name, Year);
-        }
-        /*
-        public static bool CheckData(string name, string author, string year)
-        {
-            if (name.Length < 1 || name.Contains(" "))
-            {
-                throw new Exception(".....!");
-            }
-            else if (author.Length < 2 || author.Contains(" "))
-            {
-                throw new Exception(" ....!");
-            }
-            else if (year.ToString().Length > 0 || year.ToString().Length < 5 || year.ToString().Contains(' '))
-            {
-                throw new Exception("lfnf!");
-            }
-            else
-                return true;
-        } */
+        }       
     }
 }

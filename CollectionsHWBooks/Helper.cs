@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,12 @@ namespace CollectionsHWBooks
 {
     internal class Helper
     {
+        //ArrayList books = new ArrayList();
         public static void PrintBooksInfo(System.Collections.IList list)
         {
-            foreach (var item in list)
+            foreach (Books item in list)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"Автор:{item.Author} / Название: {item.Name} / Издательство: {item.Year}");
             }
         }
     }

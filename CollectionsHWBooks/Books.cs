@@ -9,10 +9,10 @@ namespace CollectionsHWBooks
 {
     internal class Books
     {
-        public Books(string name, string author, int year)
+        public Books(string author, string name,  int year)
         {
-            Name = name;
             Author = author;
+            Name = name;
             Year = year;
         }
         public string Author { get; private set; }
@@ -20,8 +20,9 @@ namespace CollectionsHWBooks
         public int Year { get; private set; }
         public override string ToString()
         {
-            return string.Format("Автор: {Author}, Название: {Name}, Издательство: {Year}", Name, Author, Year);
+            return string.Format("Автор: {Author}, Название: {Name}, Издательство: {Year}", Author, Name, Year);
         }
+        /*
         public static bool CheckData(string name, string author, string year)
         {
             if (name.Length < 1 || name.Contains(" "))
@@ -38,6 +39,6 @@ namespace CollectionsHWBooks
             }
             else
                 return true;
-        }
+        } */
     }
 }

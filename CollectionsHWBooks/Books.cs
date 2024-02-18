@@ -21,7 +21,6 @@ namespace CollectionsHWBooks
         public string Author { get => author; set => author = value; }
         public string Name { get => name; set => name = value; }
         public int Year { get => year; set => year = value; }
-
         public override string ToString()
         {
             return string.Format("Автор: {Author}, Название: {Name}, Издательство: {Year}", Author, Name, Year);

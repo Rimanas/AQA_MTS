@@ -20,60 +20,70 @@ namespace CollectionsHWBooks
             string name = Console.ReadLine();;
             Console.WriteLine("Ввведите год издания книги");
             int year = Convert.ToInt32(Console.ReadLine());
+            if (year.ToString().Length > 4 || year.ToString().Length < 4 || year.ToString().Contains(' '))
+            {
+                throw new WrongDateException("Некорректная дата");
+            }
             try
             {
                 books.Add(new Books(author, name, year));
             }
-            catch (Exception e)
+            catch (Exception e) when (e is WrongDateException)
             {
                 Console.WriteLine($"Ошибка : {e.Message}");
             }
         }
         public void RemoveBook1(ArrayList books)
         {
-            Console.WriteLine("Удаление книги из списка");
-            Console.WriteLine("Ввведите название книги");
+            Console.WriteLine("\nУдаление книги из списка \n В базе библиотеки имеются следуюие книги: ");    
+            Helper.PrintBooksInfo(books);
+            Console.WriteLine("\nВвведите название книги, которую необходимо удалить из списка: ");
             string name = Console.ReadLine();
-            try
+                int i = 0;
+            foreach (Books item in books)
             {
-                foreach (Books item in books)
-                    if (item.Name.Equals(name))
-                    {
-                        books.Remove(books);
-                       
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Книги с названием {name} не найдено");
-                        break;
-                    }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Ошибка удаления: {e.Message}");
-            }
+                if (item.Name.Equals(name))
+                {
+                    Console.WriteLine($"\nКнига для удаления найдена: \n Автор:{item.Author} / Название: {item.Name} / Издательство: {item.Year}");
+                    books.Remove(item);
+                    break;
+                }
+                else i++;
 
+                if (i == books.Count) Console.WriteLine($"\nКниг автора {item.Author} нет в библиотеке");
+            }           
         }
-        public void RemoveBook(ArrayList books)
+        public void RemoveBook(ArrayList book)
         {
-            books.Remove(books);
+            book.Remove(book);
         }
-
-
-        public void SerchBookByAythor(ArrayList books)
+       public void SerchBookByAythor(ArrayList books)
         {
-            Console.WriteLine("Ввведите автора книги");
+            Console.WriteLine("\nВвведите автора книги, которую необходимо найти: ");
             string author = Console.ReadLine();
-            int count = 0;
+            int i = 0;
             foreach (Books item in books)
             {
                 if (item.Author.Equals(author))
                 {
-                    Console.WriteLine($"Автор:{item.Author} / Название: {item.Name} / Издательство: {item.Year}") ;
+                    Console.WriteLine($"\nКнига найдена: \n Автор:{item.Author} / Название: {item.Name} / Издательство: {item.Year}") ;
                 }
-                else count++;
+                else i++;
 
-                if (count == books.Count) Console.WriteLine($"Книг автора {item.Author} нет в библиотеке");
+                if (i == books.Count) Console.WriteLine($"Книг автора {item.Author} нет в библиотеке");
+            }
+        }
+        public void Exit()
+        {
+            Console.WriteLine("\nЕсли хотите завершить проограмму введите Y, затем нажмите Enter:\n");
+            string q = Convert.ToString(Console.ReadLine());
+            if (q == "Y")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.Write("\nПрограмма не завершена\n");
             }
         }
     }

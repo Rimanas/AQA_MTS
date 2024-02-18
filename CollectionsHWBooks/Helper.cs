@@ -9,7 +9,6 @@ namespace CollectionsHWBooks
 {
     internal class Helper
     {
-        //ArrayList books = new ArrayList();
         public static void PrintBooksInfo(System.Collections.IList book)
         {
             foreach (Books item in book)

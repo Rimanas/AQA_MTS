@@ -15,11 +15,16 @@ internal class Program
             { Guid.NewGuid(), new InventoryOfGoods("Чехол для палок", 140, 55) },
             { Guid.NewGuid(), new InventoryOfGoods("Мяч футбольный", 6000, 25) }
         };
-        Helper.PrintInventoryInfo(goods);
-        Helper.PrintInventoryInfo1(goods);
-        MethodsInventory.AddNewGood(goods);
-        Helper.PrintInventoryInfo(goods);
-        Helper.PrintInventoryInfo1(goods);
-        MethodsInventory.SerchGoodById(goods);
+        Helper.PrintInventoryInfo(goods);       // Выводим первоначальный список товаров
+        Helper.PrintInventoryInfo1(goods);      // Выводим первоначальный список товаров  (2 способ реализации)
+        MethodsInventory.AddNewGood(goods);     // Добавим новый товар
+        MethodsInventory.AddNewGood(goods);     // Добавим еще один новый товар
+        Helper.PrintInventoryInfo(goods);       // Выводим список товаров с новым товаром
+        MethodsInventory.SerchGoodById(goods);  // Поиск товара по id
+        MethodsInventory.RemoveGood(goods);     // Удаление товара
+        Console.WriteLine("\n Список товаров после уаления:\n");
+        Helper.PrintInventoryInfo(goods);       // Выводим список товаров после удаления
+        MethodsInventory.UpdateGoods(goods);
+        Helper.PrintInventoryInfo(goods);       // Выводим список товаров после обновления
     }
 }

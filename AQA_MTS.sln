@@ -8,6 +8,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionsHWBooks", "Colle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsHWInventory", "CollectionsHWInventory\CollectionsHWInventory.csproj", "{92CED729-931C-4260-B6FB-0120225C294A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsHWTask3", "CollectionsHWTask3\CollectionsHWTask3.csproj", "{88D04CD8-D04E-4C69-B317-4FBACA3640E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{92CED729-931C-4260-B6FB-0120225C294A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92CED729-931C-4260-B6FB-0120225C294A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92CED729-931C-4260-B6FB-0120225C294A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D04CD8-D04E-4C69-B317-4FBACA3640E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D04CD8-D04E-4C69-B317-4FBACA3640E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D04CD8-D04E-4C69-B317-4FBACA3640E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D04CD8-D04E-4C69-B317-4FBACA3640E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

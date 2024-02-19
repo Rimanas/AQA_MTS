@@ -38,11 +38,76 @@ namespace CollectionsHWInventory
             {
                 if (item.Key.Equals(id))
                 {
-                    Console.WriteLine($"\nТовар найден: {item.Value}");
+                    Console.WriteLine($"\nТовар найден: {item.Key} , {item.Value}");
                 }
                 else i++;
 
-                if (i == goods.Count) Console.WriteLine($"Книг автора {item.Key} нет в библиотеке");
+                if (i == goods.Count) Console.WriteLine($"Товара с id = {item.Key} нет.");
+            }
+        }
+        public static void RemoveGood(Dictionary<Guid, InventoryOfGoods> goods)
+        {
+            Console.WriteLine("\nУдаление товара из списка \n В базе имеются следуюие товары: ");
+            Helper.PrintInventoryInfo(goods);
+            Console.WriteLine("\nВвведите название товара, который необходимо удалить из списка: ");
+            string name = Console.ReadLine();
+            int i = 0;
+            foreach (var item in goods)
+            {
+                if (item.Value.Name.Equals(name))
+                {
+                    Console.WriteLine($"\nТовар для удаления найден: \n Идентификтор:{item.Key} / Товар: {item.Value}");
+                    goods.Remove(item.Key);
+                    break;
+                }
+                else i++;
+
+                if (i == goods.Count) Console.WriteLine($"\nТовара {item.Value} нет");
+            }
+        }
+        public static void UpdateGoods(Dictionary<Guid, InventoryOfGoods> goods)
+        {
+            Console.WriteLine("\nОбновление товара \n В базе имеются следуюие товары: ");
+            Helper.PrintInventoryInfo(goods);
+            Console.WriteLine("\nВвведите id товара, который необходимо обновить: ");
+            Guid id = new Guid(Console.ReadLine());
+            int i = 0;
+            foreach (var item in goods)
+            {
+                if (item.Key.Equals(id))
+                {
+                    Console.WriteLine($"\nТовар найден: {item.Key} , {item.Value}");
+                    Console.WriteLine("" +
+                        "Что необходимо обновиь?:\n" +
+                        " 1 - Название товара\n" +
+                        " 2 - Цену товара\n" +
+                        " 3 - Количество ");
+                    switch (Convert.ToInt32(Console.ReadLine()))
+                    {
+                        case 1:
+                            Console.WriteLine("Обновление названия. Введите новое значение названия:");
+                            item.Value.Name = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Обновление Цены. Введите новое значение Цены:");
+                            item.Value.Price = Convert.ToInt32(Console.ReadLine());
+                            break;
+                        case 3:
+                            Console.WriteLine("Обновление Количества товара. Введите новое значение:");
+                            item.Value.Count = Convert.ToInt32(Console.ReadLine());
+                            break;
+                        default:
+                            Console.WriteLine("Номер характеристики указан не верно");
+                            break;
+                    }
+                    Console.WriteLine($"Измененный товар:\n " +
+                        $"Название: {item.Value.Name} , " +
+                        $"Цена: {item.Value.Price} , " +
+                        $"Количество: {item.Value.Count} ");
+                }
+                else i++;
+
+                if (i == goods.Count) Console.WriteLine($"Товара с id = {item.Key} нет.");
             }
         }
     }

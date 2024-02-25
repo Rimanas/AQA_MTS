@@ -9,6 +9,7 @@ public class FirstTest : BaseTest
     public void ValidateIKTCalculationTest()
     {
         Driver.Navigate().GoToUrl("https://clinic-cvetkov.ru/company/kalkulyator-imt/");
+        Thread.Sleep(5000);
         IWebElement height = Driver.FindElement(By.Name("height"));
         IWebElement weight = Driver.FindElement(By.Name("weight"));
         IWebElement button = Driver.FindElement(By.Id("calc-mass-c"));

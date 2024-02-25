@@ -10,7 +10,7 @@ public class FirstTest : BaseTest
     {
         Driver.Navigate().GoToUrl("https://bymed.top/calc/%D1%81%D0%BA%D1%84-2148");
         Thread.Sleep(2000);
-        Driver.SwitchTo().Frame(1);
+        //Driver.SwitchTo().Frame(Driver.FindElement(By.XPath("//iframe[@src]")));
         IWebElement age = Driver.FindElement(By.Id("age"));                         //поле Возраст
         IWebElement selectWebElementSex = Driver.FindElement(By.Id("sex"));         //поле Пол
         SelectElement selectSex = new SelectElement(selectWebElementSex);              
@@ -23,9 +23,9 @@ public class FirstTest : BaseTest
         IWebElement grow = Driver.FindElement(By.Id("grow"));                        //Рост
         IWebElement calcButton = Driver.FindElement(By.XPath("//button[text()='Рассчитать']"));
         IWebElement mdrd = Driver.FindElement(By.Id("mdrd_res"));
-        IWebElement ckdEpi = Driver.FindElement(By.Id("ckd_epi_res");
-        IWebElement cgeRes = Driver.FindElement(By.Id("cge_res");
-        IWebElement schwartzRes = Driver.FindElement(By.Id("schwartz_res");
+        IWebElement ckdEpi = Driver.FindElement(By.Id("ckd_epi_res"));
+        IWebElement cgeRes = Driver.FindElement(By.Id("cge_res"));
+        IWebElement schwartzRes = Driver.FindElement(By.Id("schwartz_res"));
 
         age.SendKeys("20");
         selectSex.SelectByIndex(2);    //Женский 

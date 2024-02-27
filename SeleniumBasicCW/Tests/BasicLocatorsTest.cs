@@ -10,31 +10,23 @@ public class BasicLocatorsTest : BaseTest
     public void basicLocatorsTest_1()
     {
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
-
         // Find webElement by ID
-        //Driver.FindElement(By.Id("name")).SendKeys(Configurator.AppSettings.Username);
-
+        Assert.That(Driver.FindElement(By.Id("user-name")).Displayed);
         // Find webElement by Name
-        //Driver.FindElement(By.Name("password")).SendKeys(Configurator.AppSettings.Password);
-
+        Assert.That(Driver.FindElement(By.Name("user-name")).Displayed);
         // Find webElement by TagName
-        //Driver.FindElement(By.TagName("button")).Click();
-
-        Console.WriteLine($"{this} Finished...");
+        Assert.That(Driver.FindElements(By.TagName("input")).Count, Is.EqualTo(3));        
     }
 
     [Test]
     public void basicLocatorsTest_2()
     {
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
-
-        // Find webElement by linkText
-        //Driver.FindElement(By.LinkText("Forgot your password?")).Click();
-
+        // Find webElement by linkText        
+        Assert.That(Driver.FindElements(By.LinkText("https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg")).Count, Is.EqualTo(0));
         // Find webElement by className
-        //Driver.FindElement(By.ClassName("forgot_passwordpage-request-cancel")).Click();
-
-        // Find webElement by linkText
-        //Driver.FindElement(By.PartialLinkText("your password?")).Click();
+        Assert.That(Driver.FindElement(By.ClassName("login_container")).Displayed);
+        // Find webElement by PartialLinkText
+        Assert.That(Driver.FindElements(By.PartialLinkText("/productlogos/translate/")).Count, Is.EqualTo(0));
     }
 }

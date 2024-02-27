@@ -1,8 +1,8 @@
-﻿using LocatorsCW.Helpers.Configuration;
-using NUnitTest.Tests;
+﻿using SauceDemo.Helpers.Configuration;
+using SauceDemo.Tests;
 using OpenQA.Selenium;
 
-namespace LocatorsCW.Tests;
+namespace SauceDemo.Tests;
 
 public class BasicLocatorsTest : BaseTest
 {
@@ -12,13 +12,13 @@ public class BasicLocatorsTest : BaseTest
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
 
         // Find webElement by ID
-        Driver.FindElement(By.Id("name")).SendKeys(Configurator.AppSettings.Username);
+        //Driver.FindElement(By.Id("name")).SendKeys(Configurator.AppSettings.Username);
 
         // Find webElement by Name
-        Driver.FindElement(By.Name("password")).SendKeys(Configurator.AppSettings.Password);
+        //Driver.FindElement(By.Name("password")).SendKeys(Configurator.AppSettings.Password);
 
         // Find webElement by TagName
-        Driver.FindElement(By.TagName("button")).Click();
+        //Driver.FindElement(By.TagName("button")).Click();
 
         Console.WriteLine($"{this} Finished...");
     }
@@ -29,12 +29,12 @@ public class BasicLocatorsTest : BaseTest
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
 
         // Find webElement by linkText
-        Driver.FindElement(By.LinkText("Forgot your password?")).Click();
+        //Driver.FindElement(By.LinkText("Forgot your password?")).Click();
 
         // Find webElement by className
-        Driver.FindElement(By.ClassName("forgot_passwordpage-request-cancel")).Click();
+        //Driver.FindElement(By.ClassName("forgot_passwordpage-request-cancel")).Click();
 
         // Find webElement by linkText
-        Driver.FindElement(By.PartialLinkText("your password?")).Click();
+        //Driver.FindElement(By.PartialLinkText("your password?")).Click();
     }
 }

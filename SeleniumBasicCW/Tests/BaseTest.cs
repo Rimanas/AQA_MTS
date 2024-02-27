@@ -1,9 +1,9 @@
-﻿using LocatorsCW.Helpers.Configuration;
+﻿using SauceDemo.Helpers.Configuration;
 using NUnit.Framework;
-using NUnitTest.Core;
+using SauceDemo.Core;
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SauceDemo.Tests;
 
 public class BaseTest
 {

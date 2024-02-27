@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace LocatorsCW.Tests;
+namespace SauceDemo.Tests;
 
 public class CssSelectors
 {

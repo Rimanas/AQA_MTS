@@ -1,4 +1,4 @@
-﻿namespace LocatorsCW.Helpers.Configuration;
+﻿namespace SauceDemo.Helpers.Configuration;
 
 public class AppSettings
 {

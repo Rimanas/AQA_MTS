@@ -1,15 +1,15 @@
-﻿using NUnitTest.Tests;
+﻿using SauceDemo.Tests;
 using OpenQA.Selenium;
+using SauceDemo.Helpers.Configuration;
 
-namespace LocatorsCW.Tests;
+namespace SauceDemo.Tests;
 
 public class CssSelectorTest : BaseTest
 {
     [Test]
     public void CssSelectorsTest()
     {
-        Driver.Navigate().GoToUrl("file:/Users/aleksandr.trostyanko/Documents/Work/TeachMeSkills/Code/CSharp/AQA_MTS/Locators/Resources/index.html");
-
+        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
         // Поиск по id
         Assert.That(Driver.FindElement(By.CssSelector("#my-Address")).Displayed);
 

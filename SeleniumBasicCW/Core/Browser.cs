@@ -1,7 +1,7 @@
-﻿using LocatorsCW.Helpers.Configuration;
+﻿using SauceDemo.Helpers.Configuration;
 using OpenQA.Selenium;
 
-namespace NUnitTest.Core
+namespace SauceDemo.Core
 {
     public class Browser
     {

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace LocatorsCW.Helpers.Configuration
+namespace SauceDemo.Helpers.Configuration
 {
     public static class Configurator
     {

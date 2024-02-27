@@ -30,7 +30,7 @@ public class FirstTest : BaseTest
         IWebElement mdrdDiagnosis = Driver.FindElement(By.XPath("//div[@id = 'mdrd']//span[@class='diagnosis']"));
         IWebElement ckdEpiDiagnosis = Driver.FindElement(By.XPath("//div[@id = 'ckd_epi']//span[@class='diagnosis']"));
         IWebElement schwartzDiagnosis = Driver.FindElement(By.XPath("//div[@id = 'schwartz']//span[@class='diagnosis']"));
-        
+        //Заполнение значениями
         age.SendKeys("20");
         Thread.Sleep(2000);
         selectSex.SelectByValue("F");    //Женский 
@@ -44,7 +44,7 @@ public class FirstTest : BaseTest
         grow.SendKeys("165");
         calcButton.Click();
         Thread.Sleep(5000);
-
+        // Проверка
         Assert.Multiple(() =>
         {
             //MDRD

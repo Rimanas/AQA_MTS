@@ -10,6 +10,7 @@ public class SecondTestLaminate : BaseTest
     public void ValidateLaminate()
     {
         Driver.Navigate().GoToUrl("https://home-ex.ru/calculation/ ");
+        Thread.Sleep(2000);
         IWebElement lnRoom = Driver.FindElement(By.Id("ln_room_id"));                          // Длина комнаты
         IWebElement wdRoom = Driver.FindElement(By.Id("wd_room_id"));                          // Ширина комнаты
         IWebElement lnLam = Driver.FindElement(By.Id("ln_lam_id"));                            // Длина плашки
@@ -22,11 +23,6 @@ public class SecondTestLaminate : BaseTest
         IWebElement minLengthSegmentId = Driver.FindElement(By.Id("min_length_segment_id"));  // Минимальная длина обрезка        IWebElement indentWalls = Driver.FindElement(By.Id("indent_walls_id"));                // Отступ от стен
         IWebElement indentWalls = Driver.FindElement(By.Id("indent_walls_id"));            // Отступ от стен
         IWebElement calculateButton = Driver.FindElement(By.Id("btn_calculate"));              // Кнопка Рассчитать
-        IWebElement calcLamResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[1]//span"));
-        IWebElement areaRoom = Driver.FindElement(By.Id("area_room"));
-        //IWebElement calcPackResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[2]//span"));
-        //IWebElement calcPriceResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[3]//span"));
-        //IWebElement calcWeightResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[4]//span"));
         // Заполняем значениями
         lnRoom.Clear();
         lnRoom.SendKeys("500");
@@ -48,24 +44,30 @@ public class SecondTestLaminate : BaseTest
         minLengthSegmentId.SendKeys("300");   
         indentWalls.SendKeys(Keys.Backspace);
         indentWalls.SendKeys("8");
+        Thread.Sleep(2000);
         calculateButton.Click();
-        Thread.Sleep(10000);
-        Assert.That(areaRoom.Text, Is.EqualTo("Площадь комнаты: 20 м2"));
-        //Проверяем
-        /*
+        Thread.Sleep(5000);
+        IWebElement areaRoom = Driver.FindElement(By.Id("area_room"));
+        IWebElement lengthRoom = Driver.FindElement(By.Id("length_room_dim"));
+        IWebElement calcLamResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[1]//span"));
+        IWebElement calcPackResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[2]//span"));
+        IWebElement calcPriceResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[3]//span"));
+        IWebElement calcWeightResult = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[4]//span"));
         Assert.Multiple(() =>
         {
-            Assert.That(calcLamResult.Text, Is.EqualTo("7098"));
-            //Assert.That(calcPackResult.Text, Is.EqualTo("710"));
-            //Assert.That(calcPriceResult.Text, Is.EqualTo("0 руб"));
-            //Assert.That(calcWeightResult.Text, Is.EqualTo("0 кг"));
+            Assert.That(areaRoom.Text, Is.EqualTo("Площадь комнаты: 20 м2"));
+            Assert.That(lengthRoom.Text, Is.EqualTo("Длина 498.4 см"));
+            Assert.That(calcLamResult.Text, Is.EqualTo("61792"));
+            Assert.That(calcPackResult.Text, Is.EqualTo("6180"));
+            Assert.That(calcPriceResult.Text, Is.EqualTo("0 руб"));
+            Assert.That(calcWeightResult.Text, Is.EqualTo("0 кг"));
 
-        });*/
+        }); 
         //или
-        // проверяем данные рассчёта
-        string result = Driver.FindElement(By.ClassName("calc-result")).Text;
-        Assert.That(result.Contains("Требуемое количество плашек ламината: 61792")&& result.Contains("Количество упаковок ламината: 6180")&& result.Contains("Стоимость ламината: 0 руб")&& result.Contains("Вес ламината: 0 кг"));
-
-
+         string result = Driver.FindElement(By.ClassName("calc-result")).Text;
+        Assert.That(result.Contains("Требуемое количество плашек ламината: 61792")
+            && result.Contains("Количество упаковок ламината: 6180")
+            && result.Contains("Стоимость ламината: 0 руб")
+            && result.Contains("Вес ламината: 0 кг"));
     }
 }

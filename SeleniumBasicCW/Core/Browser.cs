@@ -1,4 +1,4 @@
-﻿using NUnitTest.Utilites.Configuration;
+﻿using LocatorsCW.Helpers.Configuration;
 using OpenQA.Selenium;
 
 namespace NUnitTest.Core

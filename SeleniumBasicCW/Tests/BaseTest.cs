@@ -1,6 +1,6 @@
-﻿using NUnit.Framework;
+﻿using LocatorsCW.Helpers.Configuration;
+using NUnit.Framework;
 using NUnitTest.Core;
-using NUnitTest.Utilites.Configuration;
 using OpenQA.Selenium;
 
 namespace NUnitTest.Tests;

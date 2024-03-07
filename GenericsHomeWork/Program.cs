@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using GenericsHomeWork.TaskOnePoint;
+using GenericsHomeWork.TaskTwoGenericClass;
 
 
 Console.WriteLine("Задание 1. Точка на координатной плоскости");
@@ -13,4 +14,18 @@ intPoint.Print();
 doublePoint.Print(); 
 floatPoint.Print(); 
 longPoint.Print();  
-stringPoint.Print();    
+stringPoint.Print();
+
+Console.WriteLine("Задание 2");
+GenericClass<int> arrayInt = new(3);    
+for (int i = 0; i < 3; i++) 
+{
+    arrayInt.MyArray[i] = new Random().Next(25);
+}
+
+//arrayInt.Add(5) ;
+//arrayInt.Add(1);
+//arrayInt.Add(2) ;   
+
+
+arrayInt.PrintArray();

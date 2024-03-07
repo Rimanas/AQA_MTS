@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace GenericsHomeWork.TaskTwoGenericClass
+﻿namespace GenericsHomeWork.TaskTwoGenericClass
 {
     internal class GenericClass<T>
     {
@@ -42,7 +35,11 @@ namespace GenericsHomeWork.TaskTwoGenericClass
             if (index < 0 || index > MyArray.Length - 1)
                 Console.WriteLine("Индекс вышел за пределы массива");
             else
-                Console.WriteLine($"Индксу {index} соответсвует элемент: {MyArray[index]}");
+                Console.WriteLine($"Индексу {index} соответсвует элемент: {MyArray[index]}");
+        }
+        public void GetArrayLenght()
+        {
+            Console.WriteLine($"Длина массива : {MyArray.Length}");
         }
 
     }

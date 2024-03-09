@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace LINQHomeWork;
+public class Program
+{
+    static void Main()
+    {
+        //Второе задание. Клиенты фитнес - центра
+        new ClientsTask().Solve2();
+    }
+}

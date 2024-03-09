@@ -15,12 +15,13 @@ namespace LINQHomeWork.data
 
             var list = new List<Clients>()
         {
-            new Clients(00010, 2023, 1, 145),
-            new Clients(00011, 2023, 12, 1341),
-            new Clients(00012, 2022, 11, 1145),
-            new Clients(00013, 2024, 5, 343),
-            new Clients(00014, 2023, 3, 167),
-            new Clients(00015, 2021, 10, 646),
+            new Clients(10, 2023, 1, 145),
+            new Clients(11, 2023, 12, 1341),
+            new Clients(12, 2022, 11, 1145),
+            new Clients(13, 2024, 5, 343),
+            new Clients(14, 2023, 3, 167),
+            new Clients(15, 2021, 10, 646),
+            new Clients(16, 2023, 1, 145),
         };
 
             foreach (Clients s in list)
@@ -28,8 +29,6 @@ namespace LINQHomeWork.data
                 yield return s;
             }
         }
-
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

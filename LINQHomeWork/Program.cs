@@ -7,5 +7,7 @@ public class Program
         new NumericSequenceTask().Solve1();
         //Второе задание. Клиенты фитнес - центра
         new ClientsTask().Solve2();
+        //Третье задание. Строковая последовательность
+        new StringSequenceTask3().Solve3();
     }
 }

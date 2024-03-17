@@ -20,6 +20,7 @@ namespace SeleniumAdvancedCW.Tests
 
             IWebElement loading = Driver.FindElement(By.Id("loading"));
             Assert.IsTrue(loading.Displayed);
+            Thread.Sleep(10000);
             Assert.IsFalse(loading.Displayed);
 
             Assert.IsTrue(Driver.FindElement(By.Id("finish")).Displayed);

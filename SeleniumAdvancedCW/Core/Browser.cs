@@ -1,4 +1,4 @@
-﻿using SeleniumAdvancedCW.Utilites.Configuration;
+﻿using SeleniumAdvancedCW.Helpers.Configuration;
 using OpenQA.Selenium;
 
 namespace SeleniumAdvancedCW.Core
@@ -16,9 +16,9 @@ namespace SeleniumAdvancedCW.Core
                 _ => Driver
             };
 
-            Driver?.Manage().Window.Maximize();
+            //Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-           // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+           Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
     }
 }

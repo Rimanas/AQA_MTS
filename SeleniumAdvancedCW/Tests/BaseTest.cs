@@ -1,19 +1,22 @@
 ﻿using NUnit.Framework;
 using SeleniumAdvancedCW.Core;
-using SeleniumAdvancedCW.Utilites.Configuration;
+using SeleniumAdvancedCW.Helpers.Configuration;
 using OpenQA.Selenium;
+using SeleniumAdvancedCW.Helpers;
 
 namespace SeleniumAdvancedCW.Tests;
-
+//[Parallelizable(scope: ParallelScope.All)]
+[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class BaseTest
 {
-    protected IWebDriver Driver { get; set; }
+    protected IWebDriver Driver { get; private set; }
+    protected WaitsHelper WaitsHelper { get; private set; }
 
     [SetUp]
     public void Setup()
     {
-        Driver = new Browser().Driver!;
-        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
+        Driver = new Browser().Driver;
+        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
     }
 
     [TearDown]

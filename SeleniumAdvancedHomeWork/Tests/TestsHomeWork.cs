@@ -35,7 +35,7 @@ namespace SeleniumAdvancedHomeWork.Tests
         }
         [Test, Order(2)]
         [Description("Test for page Dynamic Control")]
-        public void DynamicControl()
+        public void DynamicControlTest()
         {
             WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("Dynamic Controls")).Click();
             var inputField = WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("input[type='text']"));
@@ -56,23 +56,31 @@ namespace SeleniumAdvancedHomeWork.Tests
         }
         [Test, Order(3)]
         [Description("Test for page File Upload")]
-        public void FileUpload()
+        public void FileUploadTest()
         {
-            var myFile = "myFile.gpeg";
+            var myFile = "myFile.jpg";
             WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("File Upload")).Click();
             var fileUploadPath = WaitsHelper.WaitForExists(By.Id("file-upload"));
             // Получаем путь к исполняемому файлу (exe)
-            //string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             // Конструируем путь к файлу внутри проекта
-            //string filePath = Path.Combine(assemblyPath, "Resources", myFile);
-            WaitsHelper.WaitForExists(By.Id("file-upload")).
-                SendKeys(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                "Resources", myFile));
+            string filePath = Path.Combine(assemblyPath, "Resources", myFile);
+            fileUploadPath.SendKeys(filePath);
             // Нажать кнопку Upload        
             WaitsHelper.WaitForExists(By.Id("file-submit")).Submit();
-            Thread.Sleep(10000);
             // Проверить, что имя файла на странице совпадает с именем загруженного файла
-            //Assert.That(WaitsHelper.WaitForVisibilityLocatedBy(By.Id("uploaded-files")).Text, Is.EqualTo(myFile));
+            Assert.That(WaitsHelper.WaitForVisibilityLocatedBy(By.Id("uploaded-files")).Text, Is.EqualTo(myFile));
+        }
+        [Test, Order(4)]
+        [Description("Test for page Frames")]
+        public void FramesTest()
+        {
+            WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("Frames")).Click();
+            //Открыть страницу iFrame
+            WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("iFrame")).Click();
+            //Найти нужный фрейм, содержащий текст
+            Driver.SwitchTo().Frame(WaitsHelper.WaitForVisibilityLocatedBy(By.Id("mce_0_ifr")));
+            Assert.That(WaitsHelper.WaitForVisibilityLocatedBy(By.XPath("//*[@class='mce-content-body ']")).Text, Is.EqualTo("Your content goes here."));
         }
     }
 }

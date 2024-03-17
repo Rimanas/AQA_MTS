@@ -13,6 +13,7 @@
   <ItemGroup>
     <None Remove="appsettings.json" />
     <None Remove="Resources\chromedriver.exe" />
+    <None Remove="Resources\myFile.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\myFile.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

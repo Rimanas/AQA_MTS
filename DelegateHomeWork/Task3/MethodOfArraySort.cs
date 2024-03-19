@@ -70,7 +70,7 @@ namespace DelegateHomeWork.Task3
 
         public void PrintArray(int[] array)
         {
-            Console.WriteLine("Массив:");
+            //Console.WriteLine("Массив:");
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write($"{array[i]}  ");

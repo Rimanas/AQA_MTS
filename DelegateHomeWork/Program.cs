@@ -7,6 +7,4 @@ new Task1().RunReturnNumber();
 //2 Задание
 new Task2().RunCalculation();
 //3 Задание
-MethodOfArraySort methodOfArraySort = new MethodOfArraySort();
-int[] array = methodOfArraySort.MethodOfArrayCreate();
-methodOfArraySort.PrintArray(array);
+new Task3().RunMethodOfArraySort();

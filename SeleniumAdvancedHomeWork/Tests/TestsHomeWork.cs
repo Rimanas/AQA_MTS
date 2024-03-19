@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using SeleniumAdvancedHomeWork.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,9 +79,22 @@ namespace SeleniumAdvancedHomeWork.Tests
             WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("Frames")).Click();
             //Открыть страницу iFrame
             WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("iFrame")).Click();
-            //Найти нужный фрейм, содержащий текст
+            //Найти нужный фрейм, содержащий текст Your content goes here.
             Driver.SwitchTo().Frame(WaitsHelper.WaitForVisibilityLocatedBy(By.Id("mce_0_ifr")));
             Assert.That(WaitsHelper.WaitForVisibilityLocatedBy(By.XPath("//*[@class='mce-content-body ']")).Text, Is.EqualTo("Your content goes here."));
+        }
+        [Test, Order(5)]
+        [Description("Test for page File Download")]
+        public void FileDownloadTest()
+        {
+            var fileForDownLoad = "shot.png";
+            // Конструируем путь к файлу внутри проекта
+            string filePath = Path.Combine(DriverFactory.DownloadDirectory, fileForDownLoad);
+            //Open the page File Download
+            WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText("File Download")).Click();
+            //Choose the file for Download
+            WaitsHelper.WaitForVisibilityLocatedBy(By.LinkText(fileForDownLoad)).Click();
+            Assert.That(!File.Exists(filePath));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using System.Reflection;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using LogLevel = OpenQA.Selenium.LogLevel;
@@ -9,6 +10,7 @@ namespace SeleniumAdvancedHomeWork.Core;
 
 public class DriverFactory
 {
+    public static string DownloadDirectory = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources");
     public IWebDriver? GetChromeDriver()
     {
         var chromeOptions = new ChromeOptions();
@@ -16,6 +18,10 @@ public class DriverFactory
         chromeOptions.AddArguments("--disable-gpu");
         chromeOptions.AddArguments("--disable-extensions");
         //chromeOptions.AddArguments("--headless");
+
+        chromeOptions.AddUserProfilePreference("download.default_directory", DownloadDirectory);
+        chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
+        chromeOptions.AddUserProfilePreference("disable-popup-blocking", "true");
 
         chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
         chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);

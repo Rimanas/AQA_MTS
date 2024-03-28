@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestRailComplexApi.Tests
+public class ProjectFakerTest : BaseTest
+{
+    private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+    private Project _project = null!;
+    private static Faker<Project> Project => new ProjectFaker();
+
+    [Test]
+    [Order(1)]
+    public void AddProjectTest()
+    {
+        _project = Project.Generate();
+
+        _project = ProjectService!.AddProject(_project).Result;
+        _logger.Info(_project.ToString());
+    }
+
+    [Test]
+    [Order(2)]
+    public void GetProjectTest()
+    {
+        _logger.Info(ProjectService?.GetProject(_project.Id.ToString()).Result.ToString());
+    }
+
+    [Test]
+    [Order(3)]
+    public void DeleteProjectTest()
+    {
+        Debug.Assert(ProjectService != null, nameof(ProjectService) + " != null");
+        _logger.Info(ProjectService.DeleteProject(_project.Id.ToString()));
+    }
+}
